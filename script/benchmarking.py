@@ -62,7 +62,8 @@ def check_args():
         '--dssp': Use(open, error='dssp/mkdssp should be readable'),
         '--selected_score': And(Use(str), lambda s: s in ["alignment", "threading",
                                                           "modeller", "secondary_structure",
-                                                          "solvent_access", "sum_scores", "all"],
+                                                          "solvent_access", "sum_scores",
+                                                          "weighted_combined_scores", "all"],
                                 error='SCORES should be an existing score'),
         '--cpu': And(Use(int), lambda n: 0 <= n <= cpu_count(),
                      error='--cpus=NUM should be integer 1 <= N <= ' + str(cpu_count())),
@@ -161,6 +162,7 @@ def plot_benchmark(output_path, min_rank, scores, benchmarking_scores, selected_
         acc_struct = benchmarking_scores[scores[4]]["total"].values[:min_rank]
         co_ev_struct = benchmarking_scores[scores[5]]["total"].values[:min_rank]
         sum_struct = benchmarking_scores[scores[6]]["total"].values[:min_rank]
+        weighted_combined_scores_struct = benchmarking_scores[scores[7]]["total"].values[:min_rank]
 
         plt.plot(rank, ali_struct, "b", label=scores[0])
         plt.plot(rank, thr_struct, "#ffa201", label=scores[1])
@@ -169,6 +171,7 @@ def plot_benchmark(output_path, min_rank, scores, benchmarking_scores, selected_
         plt.plot(rank, acc_struct, "#7a9a91", label=scores[4])
         plt.plot(rank, co_ev_struct, "#660033", label=scores[5])
         plt.plot(rank, sum_struct, "r", label=scores[6])
+        plt.plot(rank, weighted_combined_scores_struct, "#E800FB", label=scores[7])
         plt.plot([0, len(ali_struct)], [0, max(ali_struct)], "k", label="random")
         plt.legend(loc="lower right")
         plt.title("Enrichment plot")
@@ -254,7 +257,7 @@ if __name__ == "__main__":
     STRUCTURES = ["Family", "Superfamily", "Fold"]
     # all the possible scores useful for plots
     SCORES = ["alignment", "threading", "modeller", "secondary_structure", "solvent_access",
-              "co_evolution", "sum_scores"]
+              "co_evolution", "sum_scores", "weighted_combined_scores"]
 
     (BENCHMARKING_SCORES, MIN_RANK) = create_benchmarking_scores_dict(SCORES, STRUCTURES,
                                                                       DSSP_PATH, NB_PROC)
