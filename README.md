@@ -58,10 +58,31 @@ cd Fold_U
 ```
 
 ### Requirements
-Install the few required packages / modules :
+
+A linux distribution.
+
+Install the few required Python packages / modules :
 ```
 pip install -r requirements.txt
+# This command will install the following modules:
+# docopt==0.6.2
+# numpy==1.15.2
+# biopython==1.72
+# pandas==0.23.4
+# schema==0.6.8
+# tqdm==4.28.1
+# matplotlib==2.2.2
+# m2r # for Sphinx
 ```
+
+**R** software environment:
+```
+sudo apt-get install r-base
+```
+The full procedure is described [here](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04)  
+
+R is used for the Machine Learning step.  
+The required packages *boot*, *dplyr* and *readr* will be automatically installed if not already, you have nothing to do.
 
 **MODELLER** is also required, and can be installed easily with Conda :
 ```
@@ -213,17 +234,35 @@ top 350   1/1       6/6           13/13      20/20
 
 ```
 
-
 #### Generated plot
 <p align="center">
   <img width="500" src="results/plots/all_scores_plot.png" alt="Enrichment"/>
 </p>
 
 
-
 ## Documentation
 
 The documentation of our program is generated with Sphinx and and built on [Read The Docs](https://fold-u.readthedocs.io/en/latest/?badge=latest).
+
+
+
+## CHANGES
+
+**New !!**
+
+We added Machine Learning !
+The R script `script/machine_learning.R` uses logistic regression to find the best weights to apply to each type of score in order to optimize the benchmarking. That is to say it will learn the specificities of each scores according to the benchmarks (Fold, Superfamily and Family) in order to get the most information from each.
+
+***Steps to apply machine learning:***
+
+1. Run script/benchmarking.py
+2. Run script/machine_learning.R => a new column appears in all results/\*/scores.csv files
+3. Re-run script/benchmarking.py => all results are already generated so it will simply add the machine learning line to the enrichment plot !
+
+Enjoy :)
+
+If any questions, juste ask with an issue.
+
 
 ## Authors
 
@@ -244,3 +283,4 @@ Thanks to team 1 and team 2 for generating to us multiple alignment files (`data
 ## License
 
 This project is licensed under the MIT License.
+
