@@ -2,15 +2,22 @@
 # -*- coding: utf-8 -*-
 
 """
+This program is the second step (downstream) of a protein structure prediction project.
+This step consists of threading a query sequence on different given templates.
+Our project is part of the Meet-U 2018-2019 competition. Meet-U is a collaborative pedagogical
+and research initiative between several Universities of Paris area. The course is intended to
+Master students (2nd year) in Bioinformatics. For more details, please refer to :
+http://www.meet-u.org/
+
     Usage:
-        ./fold_u FOLDREC CLUSTAL CCMPRED [--nb_pdb NUM] [--output PATH] [--dssp PATH] [--cpu NUM]
-                                         [--metafold PATH] [--dope PATH] [--benchmark PATH]
+        ./fold_u FOLDREC ALN [--nb_pdb NUM] [--output PATH] [--cpu NUM]
+                             [--metafold PATH] [--dope PATH] [--benchmark PATH]
 
     Arguments:
         FOLDREC                               N profile * profile alignment and
                                               their corresponding score.
-        CLUSTAL                               Path to the multiple alignment file (clustal format).
-        CCMPRED                               Path to the ccmpred result file.
+        ALN                                   Path to the multiple alignment file (fasta format).
+                                              The query sequence SHOULD BE the first !
 
     Options:
         -h, --help                            Show this
@@ -19,8 +26,6 @@
         -o PATH, --output PATH                Path to the directory containing
                                               the result files (scores and pdb)
                                               [default: ./results]
-        -a PATH, --dssp PATH                  Path to the dssp software
-                                              binary [default: /usr/bin/mkdssp]
         -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                               using all available (0).
                                               [default: 0]
@@ -33,6 +38,7 @@
 """
 
 # Third-party modules
+import subprocess
 from multiprocessing import Pool, cpu_count
 from functools import partial
 from datetime import datetime
@@ -54,12 +60,10 @@ def check_args():
     """
     schema = Schema({
         'FOLDREC': Use(open, error='FOLDREC file should be readable'),
-        'CLUSTAL': Use(open, error='CLUSTAL file should be readable'),
-        'CCMPRED': Use(open, error='CCMPRED file should be readable'),
+        'ALN': Use(open, error='ALN file should be readable'),
         '--metafold': Use(open, error='METAFOLD_FILE should be readable'),
         '--nb_pdb': And(Use(int), lambda n: 1 <= n <= 405,
-                        error='--nb_pdb=NUM should be integer 1 <= N <= 405'),
-        '--dssp': Use(open, error='dssp/mkdssp should be readable'),
+                        error='--nb_pdb=NUM should be integer 1 <= N <= 200'),
         '--dope': Use(open, error='dope file should be readable'),
         '--benchmark': Use(open, error='BENCHMARK_FILE should be readable'),
         '--cpu': And(Use(int), lambda n: 0 <= n <= cpu_count(),
@@ -85,10 +89,8 @@ if __name__ == "__main__":
 
     FOLDREC_FILE = ARGUMENTS["FOLDREC"]
     QUERY_NAME = FOLDREC_FILE.split("/")[-1].split(".")[0]
-    # Multiple alignment file (Clustal format) of the current query
-    CLUSTAL_FILE = ARGUMENTS["CLUSTAL"]
-    # Get the result of ccmpred for the query
-    CCMPRED_FILE = ARGUMENTS["CCMPRED"]
+    # Multiple alignment file (Fasta format) of the current query
+    ALN_FILE = ARGUMENTS["ALN"]
     # Create the first n pdb templates
     NB_PDB = int(ARGUMENTS["--nb_pdb"])
     # METAFOLD file
@@ -99,10 +101,18 @@ if __name__ == "__main__":
     BENCHMARK_FILE = ARGUMENTS["--benchmark"]
     # OUTPUT file
     OUTPUT_PATH = ARGUMENTS["--output"]
-    # DSSP path
-    DSSP_PATH = ARGUMENTS["--dssp"]
     # Number of cpus for parallelisation
     NB_PROC = cpu_count() if int(ARGUMENTS["--cpu"]) == 0 else int(ARGUMENTS["--cpu"])
+
+
+    ### Run CCMpred
+    ####################
+    print("Run CCMpred")
+    subprocess.Popen(["./scripts/run_ccmpred.py", ALN_FILE]).communicate()[0]
+    # Output files generated
+    CLUSTAL_FILE = "data/aln/clustal/" + QUERY_NAME + ".clustal"
+    CCMPRED_FILE = "data/ccmpred/" + QUERY_NAME + ".mat"
+
 
     ### Parse data files
     ####################
@@ -124,12 +134,13 @@ if __name__ == "__main__":
     INDEX_LIST = parsing.get_index_list(CLUSTAL_FILE)
     TOP_COUPLINGS_DICT = parsing.parse_ccmpred_result(CCMPRED_FILE, INDEX_LIST)
 
+
     ### Main calculations
     #####################
 
     # Parallelization of the main loop
     with Pool(processes=NB_PROC) as pool:
-        FUNC = partial(process, DIST_RANGE, DOPE_DICT, OUTPUT_PATH, DSSP_PATH, INDEX_LIST,
+        FUNC = partial(process, DIST_RANGE, DOPE_DICT, OUTPUT_PATH, INDEX_LIST,
                        TOP_COUPLINGS_DICT)
         # tqdm module enables an ETA progress bar for each alignment processed
         # imap_unordered can smooth things out by yielding faster-calculated values
