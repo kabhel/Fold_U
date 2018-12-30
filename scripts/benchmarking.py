@@ -13,7 +13,7 @@
     percentage of benchmarks for the TOP N found.
 
     Usage:
-        ./script/benchmarking.py [--selected_score SCORE] [--dssp PATH] [--cpu NUM] [--output PATH]
+        ./script/benchmarking.py [--selected_score SCORE] [--cpu NUM] [--output PATH]
 
     Options:
         -h, --help                            Show this
@@ -22,8 +22,6 @@
                                               "secondary_structure", "solvent_access"
                                               or "sum_scores",
                                               or all of them at once: "all" [default: all]
-        -d PATH, --dssp PATH                  Path to the dssp software
-                                              binary [default: /usr/local/bin/mkdssp]
         -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                               using all available (0).
                                               [default: 0]
@@ -59,7 +57,6 @@ def check_args():
         Checks and validates the types of inputs parsed by docopt from command line.
     """
     schema = Schema({
-        '--dssp': Use(open, error='dssp/mkdssp should be readable'),
         '--selected_score': And(Use(str), lambda s: s in ["alignment", "threading",
                                                           "modeller", "secondary_structure",
                                                           "solvent_access", "sum_scores",
@@ -74,7 +71,7 @@ def check_args():
     except SchemaError as err:
         exit(err)
 
-def create_benchmarking_scores_dict(scores, structures, dssp_path, nb_proc):
+def create_benchmarking_scores_dict(scores, structures, nb_proc):
     """
         Create a dictionary of scores with key = a score, value = a pandas dataframe
         which contains the cumulative sum of benchmark for each benchmark type and for
@@ -83,7 +80,6 @@ def create_benchmarking_scores_dict(scores, structures, dssp_path, nb_proc):
         Args:
             scores (list): A list of score name
             structures (list): List containing fold types: "Family", "Superfamily", "Fold"
-            dssp_path (str): Path to the installed dssp program.
             nb_proc (int): Number of processors.
 
 
@@ -104,9 +100,8 @@ def create_benchmarking_scores_dict(scores, structures, dssp_path, nb_proc):
         if not os.path.isfile("results/" + query + "/scores.csv"):
             print("\nProcessing query {} / {} : {}\n".format(ind, len(all_foldrecs), query))
             process = subprocess.Popen(["./fold_u", "data/foldrec/" + query + ".foldrec",
-                                        "data/aln/clustal/" + query + ".clustal",
-                                        "data/ccmpred/" + query + ".mat",
-                                        "-o", "results/" + query, "--dssp", dssp_path,
+                                        "data/aln/fasta/" + query + ".clustal",
+                                        "-o", "results/" + query,
                                         "--cpu", str(nb_proc)], stdout=subprocess.PIPE).communicate()[0]
             rows, columns = os.popen('stty size', 'r').read().split()
             print("\n" + "-"*int(columns))
@@ -247,8 +242,6 @@ if __name__ == "__main__":
 
     # OUTPUT file
     OUTPUT_PATH = ARGUMENTS["--output"]
-    # DSSP path
-    DSSP_PATH = ARGUMENTS["--dssp"]
     # Number of cpus for parallelisation
     NB_PROC = cpu_count() if int(ARGUMENTS["--cpu"]) == 0 else int(ARGUMENTS["--cpu"])
     # Selected score you want to have info about
@@ -260,7 +253,7 @@ if __name__ == "__main__":
               "co_evolution", "sum_scores", "weighted_combined_scores"]
 
     (BENCHMARKING_SCORES, MIN_RANK) = create_benchmarking_scores_dict(SCORES, STRUCTURES,
-                                                                      DSSP_PATH, NB_PROC)
+                                                                      NB_PROC)
 
     print_table(SELECTED_SCORE, BENCHMARKING_SCORES)
     plot_benchmark(OUTPUT_PATH, MIN_RANK, SCORES, BENCHMARKING_SCORES, SELECTED_SCORE)
