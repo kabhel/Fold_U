@@ -132,13 +132,13 @@ Options:
 `script/benchmarking.py` runs the `fold_u` program for each foldrec if results are not still generated. It returns a `results/plots` folder containing the generated plots and prints the **top N tables** in the terminal.
 
 ```
-./script/benchmarking.py
+./scripts/benchmarking.py
 ```
 
 #### Get help
 
 ```
-./script/benchmarking.py -h
+./scripts/benchmarking.py -h
 
 Usage:
     ./script/benchmarking.py [--selected_score SCORE] [--cpu NUM] [--output PATH]
