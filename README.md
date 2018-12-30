@@ -59,9 +59,9 @@ cd Fold_U
 
 ### Requirements
 
-A linux distribution.
+1. A linux distribution.
 
-Install the few required Python packages / modules :
+2. Install the few required Python packages / modules :
 ```
 pip install -r requirements.txt
 # This command will install the following modules:
@@ -75,44 +75,24 @@ pip install -r requirements.txt
 # m2r # for Sphinx
 ```
 
-**R** software environment:
+3. **R** software environment. The full procedure is described [here](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04). R is used for the Machine Learning step. The required packages *boot*, *dplyr* and *readr* will be automatically installed if not already, you have nothing to do.
 ```
 sudo apt-get install r-base
 ```
-The full procedure is described [here](https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04)  
 
-R is used for the Machine Learning step.  
-The required packages *boot*, *dplyr* and *readr* will be automatically installed if not already, you have nothing to do.
-
-**MODELLER** is also required, and can be installed easily with Conda :
+4. **MODELLER** is also required, and can be installed easily with Conda. You need to register to get a license key [here](https://salilab.org/modeller/registration.html), and follow instructions during installation to insert license key in the program.
 ```
 conda install -c salilab modeller
-```
-You need to register to get a license key [here](https://salilab.org/modeller/registration.html), and follow instructions during installation to insert license key in the program.
-
-
-To calculate the solvent accessibility score **DSSP** is also required:
-```
-sudo apt-get install dssp
-```
-Or you can download the [latest release](https://github.com/cmbi/xssp/releases/latest) and install from source.
-
-In order to gain time, we have already **run CCMpred** with all the multiple alignment files to create the multiple alignment files in `.clustal` format and the `.mat` files with the following script :
-
-```
-./script/run_ccmpred.py
 ```
 
 ## Run the program
 
-`fold_u` takes in input a **foldrec file** and a **multiple alignment file** (clustal format) and the **CCMpred result** for the studied query. It returns a `score.csv` file and the **top N pdb structures**.
+`fold_u` takes in input a **foldrec file** and a **multiple alignment file** (fasta format) of the studied query. It returns a `score.csv` file and the **top N pdb structures**.
 
 ### Toy example
 
-The `scores.csv` and the **top 10 pdb structures** of the His_biosynth query sequence are stored in `results/His_biosynth` folder.
 ```
-./fold_u data/foldrec/His_biosynth.foldrec data/aln/clustal/His_biosynth.clustal\
-         data/ccmpred/His_biosynth.mat -o results/His_biosynth
+./fold_u data/foldrec/His_biosynth.foldrec data/aln/fasta/His_biosynth.fasta -o results/His_biosynth
 ```
 
 #### Get help
@@ -121,14 +101,14 @@ The `scores.csv` and the **top 10 pdb structures** of the His_biosynth query seq
 ./fold_u -h
 
 Usage:
-      ./fold_u FOLDREC CLUSTAL CCMPRED [--nb_pdb NUM] [--output PATH] [--dssp PATH] [--cpu NUM]
-                                       [--metafold PATH] [--dope PATH] [--benchmark PATH]
+    ./fold_u FOLDREC ALN [--nb_pdb NUM] [--output PATH] [--cpu NUM]
+                         [--metafold PATH] [--dope PATH] [--benchmark PATH]
 
 Arguments:
     FOLDREC                               N profile * profile alignment and
                                           their corresponding score.
-    CLUSTAL                               Path to the multiple alignment file (clustal format).
-    CCMPRED                               Path to the ccmpred result file.
+    ALN                                   Path to the multiple alignment file (fasta format).
+                                          The query sequence SHOULD BE the first !
 
 Options:
     -h, --help                            Show this
@@ -137,8 +117,6 @@ Options:
     -o PATH, --output PATH                Path to the directory containing
                                           the result files (scores and pdb)
                                           [default: ./results]
-    -a PATH, --dssp PATH                  Path to the dssp software
-                                          binary [default: /usr/bin/mkdssp]
     -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                           using all available (0).
                                           [default: 0]
@@ -149,7 +127,7 @@ Options:
     -b PATH, --benchmark PATH             Path to the benchmark.list file
                                           [default: data/benchmark.list]
 ```
-### Run all the queries + Benchmarking
+## Run all the queries + Benchmarking
 
 `script/benchmarking.py` runs the `fold_u` program for each foldrec if results are not still generated. It returns a `results/plots` folder containing the generated plots and prints the **top N tables** in the terminal.
 
@@ -163,7 +141,7 @@ Options:
 ./script/benchmarking.py -h
 
 Usage:
-    ./script/benchmarking.py [--selected_score SCORE] [--dssp PATH] [--cpu NUM] [--output PATH]   
+    ./script/benchmarking.py [--selected_score SCORE] [--cpu NUM] [--output PATH]
 
 Options:
     -h, --help                            Show this
@@ -172,8 +150,6 @@ Options:
                                           "secondary_structure", "solvent_access"
                                           or "sum_scores",
                                           or all of them at once: "all" [default: all]
-    -d PATH, --dssp PATH                  Path to the dssp software
-                                          binary [default: /usr/local/bin/mkdssp]
     -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                           using all available (0).
                                           [default: 0]
@@ -184,7 +160,6 @@ Options:
 
 ### Results
 
-**! We used the new data !**
 
 #### Top N tables
 ```
@@ -239,13 +214,6 @@ top 350   1/1       6/6           13/13      20/20
   <img width="500" src="results/plots/all_scores_plot.png" alt="Enrichment"/>
 </p>
 
-
-## Documentation
-
-The documentation of our program is generated with Sphinx and and built on [Read The Docs](https://fold-u.readthedocs.io/en/latest/?badge=latest).
-
-
-
 ## CHANGES
 
 **New !!**
@@ -262,6 +230,11 @@ The R script `script/machine_learning.R` uses logistic regression to find the be
 Enjoy :)
 
 If any questions, juste ask with an issue.
+
+
+## Documentation
+
+The documentation of our program is generated with Sphinx and and built on [Read The Docs](https://fold-u.readthedocs.io/en/latest/?badge=latest).
 
 
 ## Authors
