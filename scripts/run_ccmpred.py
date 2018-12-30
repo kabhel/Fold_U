@@ -62,8 +62,9 @@ if __name__ == "__main__":
     QUERY = ALN_FILE.split("/")[-1].split(".")[0]
 
     # Paths
-    print(ALN_FILE_CLUSTAL)
-    print(CCMPRED_OUTPUT)
+    ALN_FILE_CLUSTAL = "data/aln/clustal/" + QUERY + ".clustal"
+    CCMPRED_OUTPUT = "data/ccmpred/" + QUERY + ".mat"
+
     if not os.path.isfile(CCMPRED_OUTPUT):
         # Convert multiple alignment file from fasta to clustal
         convert_aln_file(ALN_FILE, ALN_FILE_CLUSTAL)
