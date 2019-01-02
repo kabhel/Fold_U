@@ -1,10 +1,11 @@
 # Install packages if not already installed and load them
-list.of.packages <- c("boot", "dplyr", "readr")
+list.of.packages <- c("boot", "dplyr", "readr", "gdata")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 library(boot)
 library(dplyr)
 library(readr)
+library(gdata)
 
 # Reduce verbose of readr package when readin csv files
 options(readr.num_columns = 0)
@@ -86,6 +87,11 @@ for (scores.file in path.to.csv.scores){
     tmp <- cbind(tmp, weighted_combined_scores)
     # Write the CSV file
     write.csv(tmp, scores.file, row.names = F, quote = F)
+    # Write the reduced ranking file to ranking.txt
+    rank.file = paste0(dirname(scores.file), "/ranking.txt")
+    rank.df = cbind(as.data.frame(1:length(tmp[,1])), tmp[,c(1,10)])
+    colnames(rank.df) = c("Rank", "          Family", "Weighted_Combined_Score")
+    write.fwf(rank.df, file=rank.file, sep="\t", justify="right")
 }
 
 

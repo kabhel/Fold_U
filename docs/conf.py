@@ -15,7 +15,6 @@
 import os
 import sys
 sys.path.append(os.path.abspath('../'))
-
 # -- Project information -----------------------------------------------------
 
 project = 'Fold U'
@@ -23,9 +22,9 @@ copyright = '2018, Gabriel Cretin, Hélène Kabbech, Tom Gutman, Flora Mikaeloff
 author = 'Gabriel Cretin, Hélène Kabbech, Tom Gutman, Flora Mikaeloff, Franz Arnold'
 
 # The short X.Y version
-version = '2.1'
+version = '3.0'
 # The full version, including alpha/beta/rc tags
-release = '2.1'
+release = '3.0'
 
 
 # -- General configuration ---------------------------------------------------

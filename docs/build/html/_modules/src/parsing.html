@@ -5,63 +5,63 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>src.parsing &mdash; Fold U 2.1 documentation</title>
-  
 
-  
-  
-  
-  
+  <title>src.parsing &mdash; Fold U 3.0 documentation</title>
 
-  
 
-  
-  
-    
 
-  
+
+
+
+
+
+
+
+
+
+
+
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
 
-  
+
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
 
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
-          
 
-          
+
+
             <a href="../../index.html" class="icon icon-home"> Fold U
-          
 
-          
+
+
           </a>
 
-          
-            
-            
-              <div class="version">
-                2.1
-              </div>
-            
-          
 
-          
+
+
+              <div class="version">
+                3.0
+              </div>
+
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -70,16 +70,16 @@
   </form>
 </div>
 
-          
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+
+
+
+
+
+
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../alignment.html">Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../template.html">Template</a></li>
@@ -90,28 +90,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../parsing.html">Parsing</a></li>
 </ul>
 
-            
-          
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
+
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Fold U</a>
-        
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
+
+
 
 
 
@@ -130,26 +130,26 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
-    
+
       <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+
           <li><a href="../index.html">Module code</a> &raquo;</li>
-        
+
       <li>src.parsing</li>
-    
-    
+
+
       <li class="wy-breadcrumbs-aside">
-        
+
       </li>
-    
+
   </ul>
 
-  
+
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+
   <h1>Source code for src.parsing</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">.. module:: parsing</span>
@@ -159,9 +159,7 @@
 
 <span class="c1"># Third-party modules</span>
 <span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">subprocess</span>
-<span class="kn">import</span> <span class="nn">pathlib</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">Bio.SeqUtils</span> <span class="k">import</span> <span class="n">seq1</span>
 
@@ -209,7 +207,7 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="c1"># Regex :</span>
     <span class="n">num_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^No</span><span class="se">\\</span><span class="s2">s*([0-9]+)&quot;</span><span class="p">)</span>
-    <span class="n">template_name_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;Alignment :.*vs</span><span class="se">\\</span><span class="s2">s+([A-Za-z0-9-_]+)&quot;</span><span class="p">)</span>
+    <span class="n">template_name_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^Alignment :.*vs</span><span class="se">\\</span><span class="s2">s+([A-Za-z0-9-_]+)&quot;</span><span class="p">)</span>
     <span class="n">score_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^Score :</span><span class="se">\\</span><span class="s2">s+([-0-9</span><span class="se">\\</span><span class="s2">.]+)&quot;</span><span class="p">)</span>
     <span class="n">query_seq_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^Query</span><span class="se">\\</span><span class="s2">s*([0-9]+)</span><span class="se">\\</span><span class="s2">s*([A-Z0-9-]+)</span><span class="se">\\</span><span class="s2">s*([0-9]+)&quot;</span><span class="p">)</span>
     <span class="n">template_seq_reg</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s2">&quot;^Template</span><span class="se">\\</span><span class="s2">s*[0-9]+</span><span class="se">\\</span><span class="s2">s*([A-Z-]+)&quot;</span><span class="p">)</span>
@@ -282,7 +280,7 @@
                                     <span class="n">Query</span><span class="p">(</span><span class="n">query_seq</span><span class="p">,</span> <span class="n">query_first</span><span class="p">,</span> <span class="n">query_last</span><span class="p">),</span>
                                     <span class="n">Template</span><span class="p">(</span><span class="n">template_name</span><span class="p">,</span> <span class="n">template_seq</span><span class="p">))</span>
                     <span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">set_pdb_name</span><span class="p">(</span><span class="n">metafold_dict</span><span class="p">)</span>
-                    <span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">parse_pdb</span><span class="p">(</span><span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">pdb</span>
+                    <span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">parse_pdb</span><span class="p">(</span><span class="s2">&quot;data/templates/&quot;</span><span class="o">+</span><span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="n">ali</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">pdb</span>
                                            <span class="o">+</span><span class="s2">&quot;.atm&quot;</span><span class="p">)</span>
                     <span class="n">alignment_dict</span><span class="p">[</span><span class="n">template_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">ali</span>
                     <span class="n">count_templates</span> <span class="o">+=</span> <span class="mi">1</span>
@@ -370,7 +368,7 @@
 
 <span class="sd">        Args:</span>
 <span class="sd">            ccmpred_result (str): Path to the output file generated by ccmpred.</span>
-<span class="sd">            index_list (list): List of indexes corresponding to amino acids positions in aln file.            </span>
+<span class="sd">            index_list (list): List of indexes corresponding to amino acids positions in aln file.</span>
 
 <span class="sd">        Returns:</span>
 <span class="sd">            dict: A dictionary with key = ranking of coupling based on ss_confidence</span>
@@ -395,10 +393,10 @@
 </pre></div>
 
            </div>
-           
+
           </div>
           <footer>
-  
+
 
   <hr/>
 
@@ -408,7 +406,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 
@@ -418,15 +416,15 @@
     </section>
 
   </div>
-  
 
 
-  
+
+
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.1',
+            VERSION:'3.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -439,7 +437,7 @@
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  
+
 
   <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -447,7 +445,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
 
 </body>
 </html>

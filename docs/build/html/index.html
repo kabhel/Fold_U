@@ -5,64 +5,64 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>Fold U: A Protein Structure Prediction Program &mdash; Fold U 2.1 documentation</title>
-  
 
-  
-  
-  
-  
+  <title>Fold U: A Protein Structure Prediction Program &mdash; Fold U 3.0 documentation</title>
 
-  
 
-  
-  
-    
 
-  
+
+
+
+
+
+
+
+
+
+
+
 
   <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Alignment" href="alignment.html" /> 
+    <link rel="next" title="Alignment" href="alignment.html" />
 
-  
+
   <script src="_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
 
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
-          
 
-          
+
+
             <a href="#" class="icon icon-home"> Fold U
-          
 
-          
+
+
           </a>
 
-          
-            
-            
-              <div class="version">
-                2.1
-              </div>
-            
-          
 
-          
+
+
+              <div class="version">
+                3.0
+              </div>
+
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -71,16 +71,16 @@
   </form>
 </div>
 
-          
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+
+
+
+
+
+
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="alignment.html">Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="template.html">Template</a></li>
@@ -91,28 +91,28 @@
 <li class="toctree-l1"><a class="reference internal" href="parsing.html">Parsing</a></li>
 </ul>
 
-            
-          
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
+
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="#">Fold U</a>
-        
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
+
+
 
 
 
@@ -131,29 +131,29 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
-    
+
       <li><a href="#">Docs</a> &raquo;</li>
-        
+
       <li>Fold U: A Protein Structure Prediction Program</li>
-    
-    
+
+
       <li class="wy-breadcrumbs-aside">
-        
-            
+
+
             <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+
+
       </li>
-    
+
   </ul>
 
-  
+
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <a class="reference external image-reference" href="https://github.com/meetU-MasterStudents/Fold_U/releases/tag/v2.1"><img alt="Fold-U release" src="https://img.shields.io/badge/fold--u-v2.1-blue.svg" /></a>
+
+  <a class="reference external image-reference" href="https://github.com/meetU-MasterStudents/Fold_U/releases/tag/v1.2"><img alt="Fold-U release" src="https://img.shields.io/badge/fold--u-v3.0-blue.svg" /></a>
 <a class="reference external image-reference" href="https://opensource.org/licenses/MIT"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" /></a>
 <a class="reference external image-reference" href="https://img.shields.io/badge/python-3-brightgreen.svg"><img alt="Python version" src="https://img.shields.io/badge/python-3-brightgreen.svg" /></a>
 <a class="reference external image-reference" href="https://fold-u.readthedocs.io/en/latest/?badge=latest"><img alt="Documentation Status" src="https://readthedocs.org/projects/fold-u/badge/?version=latest" /></a>
@@ -162,42 +162,9 @@
 <h1>Fold U: A Protein Structure Prediction Program<a class="headerlink" href="#fold-u-a-protein-structure-prediction-program" title="Permalink to this headline">¶</a></h1>
 <p align="center">
   <img width="400" src="img/logo_foldu.png" alt="logo_foldu"/>
-</p><p>This program is the second step (downstream) of a <strong>protein structure prediction project</strong>. This step consists of threading a query sequence on different given templates.</p>
-<p>Our project is part of the <strong>Meet-U 2018-2019</strong> competition.
+</p><p>Our program is the second step (downstream) of a <strong>protein structure prediction project</strong>. This step consists of threading a query sequence on different given templates.</p>
+<p>This project is part of the <strong>Meet-U 2018-2019</strong> competition.
 Meet-U is a collaborative pedagogical and research initiative between several Universities of Paris area. The course is intended to Master students (2nd year) in Bioinformatics. For more details, please refer to <a class="reference external" href="http://www.meet-u.org/">http://www.meet-u.org/</a>.</p>
-<div class="section" id="implemented-strategy">
-<h2>Implemented Strategy<a class="headerlink" href="#implemented-strategy" title="Permalink to this headline">¶</a></h2>
-<p>The overall strategy implemented by our team is the following :</p>
-<ol class="arabic simple">
-<li>The <code class="docutils literal notranslate"><span class="pre">.foldrec</span></code> file resulting from a profile-profile alignment and generated during the first step (upstream) is parsed to extract relevant informations (query and template sequences, alignment score, etc.).</li>
-<li>For each alignment, <strong>the query sequence is threaded on the template</strong> and a <strong>threading score</strong> is generated using an energy DOPE matrix.</li>
-<li>Then, the program <strong>MODELLER</strong> generates a new 3D model by homology (alignment between query and template) and returns a high resolution (bin 0.125Å) DOPE score, which is a statistical potential implemented in MODELLER.
-This new model is then used to calculate several other scores (<strong>secondary structure</strong>, <strong>solvent accessibility</strong> and <strong>co-evolution scores</strong>).</li>
-<li>Each generated scores are <strong>normalized using the min-max scaling method</strong> (values between 0 and 1) in order to addition them.</li>
-<li>The scores are stored in <code class="docutils literal notranslate"><span class="pre">scores.csv</span></code> and the <strong>top N pdb structure</strong> are generated.</li>
-</ol>
-<div class="section" id="implemented-scores">
-<h3>Implemented scores<a class="headerlink" href="#implemented-scores" title="Permalink to this headline">¶</a></h3>
-<p>To improve the structure prediction of the query, several scores have been implemented :</p>
-<ul class="simple">
-<li><strong>Alignment score</strong> : Resulting from the profile-profile alignment during the first step (Upstream).</li>
-<li><strong>Threading score</strong> : Score based on the threading of the query on the template and the energy DOPE matrix.</li>
-<li><strong>Modeller score</strong> : Calculating the DOPE statistical potential score of the new model generated by homology modelling with MODELLER based on the alignment of the query and the template.</li>
-<li><strong>Co-evolution score</strong> : Co-evolution score measures co-occurence of a pair of amino acid in ortholog sequences using CCMpred program.</li>
-<li><strong>Secondary structure score</strong> : Based on the predicted secondary structure and associated confidence score generated by PSIPRED, query and template are compared and a score is generated.</li>
-<li><strong>Solvent accessibility score</strong> : DSSP generates a solvent accessibility value for each amino acid of
-the template and the new template generated by Modeller. Those two values are compared and a solvent accessibility score is generated.</li>
-<li><strong>Blosum score</strong> : Comparing amino acid sequence between the query and the template and generating a score based on the blosum62 matrix. This score is not used in the combined score because of its lack of prediction.</li>
-<li><strong>Combined score</strong> : The addition of all previously mentionned scores (without the blosum score)</li>
-</ul>
-</div>
-<div class="section" id="benchmarking">
-<h3>Benchmarking<a class="headerlink" href="#benchmarking" title="Permalink to this headline">¶</a></h3>
-<p>This program is also <strong>benchmarked</strong> using ROC style plots and <strong>Top N</strong> information to evaluate the power and the relevance of the different scores. The score results are generated for all queries (foldrec files). Each plot represents the cumulative sum of benchmarks encountered along the ranking (from rank 1 to rank 405) for each calculated scores and for a specific benchmark type (<strong>“Family”</strong>, <strong>“Superfamily”</strong> or <strong>“Fold”</strong>) which correspond to the degree of similarity with the query.</p>
-<p>A top N results table is also generated showing the number of <strong>“Family”</strong>, <strong>“Superfamily”</strong> and <strong>“Fold”</strong> benchmark found in the top N ranks.</p>
-<p>We used the <strong>new data</strong> and the <strong>new benchmark.list</strong>.</p>
-</div>
-</div>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="clone-the-repository">
@@ -209,11 +176,11 @@ cd Fold_U
 </div>
 <div class="section" id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic">
-<li><p class="first">A linux distribution.</p>
-</li>
-<li><p class="first">Install the few required Python packages / modules :</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+<ol class="arabic simple">
+<li>A linux distribution.</li>
+<li>Install the few required <strong>python packages</strong> :</li>
+</ol>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>pip3 install -r requirements.txt
 # This command will install the following modules:
 # docopt==0.6.2
 # numpy==1.15.2
@@ -225,9 +192,19 @@ cd Fold_U
 # m2r # for Sphinx
 </pre></div>
 </div>
-</li>
+<ol class="arabic">
 <li><p class="first"><strong>R</strong> software environment. The full procedure is described <a class="reference external" href="https://www.digitalocean.com/community/tutorials/how-to-install-r-on-ubuntu-18-04">here</a>. R is used for the Machine Learning step. The required packages <em>boot</em>, <em>dplyr</em> and <em>readr</em> will be automatically installed if not already, you have nothing to do.</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>sudo apt-get install r-base
+</pre></div>
+</div>
+</li>
+<li><p class="first">Download the <strong>uniref90</strong> database <a class="reference external" href="https://www.uniprot.org/downloads">here</a>, put it in <code class="docutils literal notranslate"><span class="pre">data/databases/uniref90</span></code> and format it with the following command line :</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>makeblastdb -in databases/uniref90.fasta -dbtype prot
+</pre></div>
+</div>
+</li>
+<li><p class="first">Install <strong>blast-legacy</strong> with conda :</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>conda install -c bioconda blast-legacy
 </pre></div>
 </div>
 </li>
@@ -236,15 +213,32 @@ cd Fold_U
 </pre></div>
 </div>
 </li>
+<li><p class="first">If necessary, change the paths in the header of the following scripts : <code class="docutils literal notranslate"><span class="pre">bin/psipred.4.02/runpsipred</span></code> and <code class="docutils literal notranslate"><span class="pre">bin/psipred.4.02/runpsipred_single</span></code></p>
+</li>
+<li><p class="first">Run the following script to generate the PSSM for each templates of the <code class="docutils literal notranslate"><span class="pre">data/templates</span></code> folder :</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./bin/salut_1.0/salut1.sh data/templates/ data/metafold.list
+</pre></div>
+</div>
+</li>
 </ol>
 </div>
 </div>
 <div class="section" id="run-the-program">
 <h2>Run the program<a class="headerlink" href="#run-the-program" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">fold_u</span></code> takes in input a <strong>foldrec file</strong> and a <strong>multiple alignment file</strong> (fasta format) of the studied query. It returns a <code class="docutils literal notranslate"><span class="pre">score.csv</span></code> file and the <strong>top N pdb structures</strong>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">fold_u</span></code> takes in input the protein sequence of the studied query (fasta format) and an uniref database.</p>
+<p>It returns the mandatory outputs:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">ranking.txt</span></code> file with 3 columns Rank | Template | Score</li>
+<li>The <strong>top N pdb structures</strong> (top 10 by default)</li>
+</ul>
+<p>And additionnal outputs:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">scores.csv</span></code>: this CSV formatted file contains the complete results with scores values.</li>
+<li>The MODELLER alignments.</li>
+</ul>
 <div class="section" id="toy-example">
 <h3>Toy example<a class="headerlink" href="#toy-example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./fold_u data/foldrec/His_biosynth.foldrec data/aln/fasta/His_biosynth.fasta -o results/His_biosynth
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./fold_u data/queries/Agglutinin/Agglutinin.fasta data/databases/uniref90/uniref90 -o results/Agglutinin
 </pre></div>
 </div>
 <div class="section" id="get-help">
@@ -252,116 +246,170 @@ cd Fold_U
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./fold_u -h
 
 Usage:
-    ./fold_u FOLDREC ALN [--nb_pdb NUM] [--output PATH] [--cpu NUM]
-                         [--metafold PATH] [--dope PATH] [--benchmark PATH]
+    ./fold_u QUERY_FASTA UNIREF_DB [--nb_pdb NUM] [--nb_psiblast NUM] [--cpu NUM] [--dope FILE]
+                                   [--metafold FILE] [--benchmark FILE] [--output PATH]
 
 Arguments:
-    FOLDREC                               N profile * profile alignment and
-                                          their corresponding score.
-    ALN                                   Path to the multiple alignment file (fasta format).
-                                          The query sequence SHOULD BE the first !
+    QUERY_FASTA                           Path to the QUERY fasta sequence to predicted.
+    UNIREF_DB                             Path to Uniref database.
 
 Options:
     -h, --help                            Show this
     -p NUM, --nb_pdb NUM                  Number of pdb to create
                                           [default: 10]
-    -o PATH, --output PATH                Path to the directory containing
-                                          the result files (scores and pdb)
-                                          [default: ./results]
+    -t NUM, --nb_psiblast                 Round number for PSI-BLAST
+                                          [default: 3]
     -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                           using all available (0).
                                           [default: 0]
-    -m PATH, --metafold PATH              Path to the metafold.list file
-                                          [default: data/metafold.list]
-    -d PATH, --dope PATH                  Path to the dope.par file
+    -d FILE, --dope FILE                  Path to the dope.par file
                                           [default: data/dope.par]
-    -b PATH, --benchmark PATH             Path to the benchmark.list file
+    -m FILE, --metafold FILE              Path to the metafold.list file
+                                          [default: data/metafold.list]
+    -b FILE, --benchmark FILE             Path to the benchmark.list file
                                           [default: data/benchmark.list]
+    -o PATH, --output PATH                Path to the directory containing
+                                          the result files (scores and pdb)
+                                          [default: ./results]
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <div class="section" id="run-all-the-queries-benchmarking">
-<h2>Run all the queries + Benchmarking<a class="headerlink" href="#run-all-the-queries-benchmarking" title="Permalink to this headline">¶</a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">script/benchmarking.py</span></code> runs the <code class="docutils literal notranslate"><span class="pre">fold_u</span></code> program for each foldrec if results are not still generated. It returns a <code class="docutils literal notranslate"><span class="pre">results/plots</span></code> folder containing the generated plots and prints the <strong>top N tables</strong> in the terminal.</p>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./scripts/benchmarking.py
+<h3>Run all the queries + Benchmarking<a class="headerlink" href="#run-all-the-queries-benchmarking" title="Permalink to this headline">¶</a></h3>
+<p>This program is also <strong>benchmarked</strong> using ROC style plots and <strong>Top N</strong> information to evaluate the power and the relevance of the different scores. The score results are generated for all queries. Each plot represents the cumulative sum of benchmarks encountered along the ranking (from rank 1 to rank 405) for each calculated scores. A top N results table is also generated showing the number of <strong>“Family”</strong>, <strong>“Superfamily”</strong> and <strong>“Fold”</strong> benchmarks found in the top N ranks.</p>
+<p>We wrote a script that runs the <code class="docutils literal notranslate"><span class="pre">fold_u</span></code> program for each query if results are not yet generated. It returns a <code class="docutils literal notranslate"><span class="pre">results/plots</span></code> folder containing the generated plots and prints the <strong>top N tables</strong> in the terminal.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./scripts/benchmarking.py data/databases/uniref90/uniref90
 </pre></div>
 </div>
-<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./scripts/benchmarking.py -h
+<div class="section" id="id3">
+<h4>Get help<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>./script/benchmarking.py -h
 
-Usage:
-    ./script/benchmarking.py [--selected_score SCORE] [--cpu NUM] [--output PATH]
+    Usage:
+        ./script/benchmarking.py UNIREF_DB [--selected_score SCORE] [--cpu NUM] [--output PATH]
 
-Options:
-    -h, --help                            Show this
-    -s SCORE, --selected_score SCORE      Score for which you wish to see the statistics:
-                                          &quot;alignment&quot;, &quot;threading&quot;, &quot;modeller&quot;,
-                                          &quot;secondary_structure&quot;, &quot;solvent_access&quot;
-                                          or &quot;sum_scores&quot;,
-                                          or all of them at once: &quot;all&quot; [default: all]
-    -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
-                                          using all available (0).
-                                          [default: 0]
-    -o PATH, --output PATH                Path to the directory containing
-                                          the result files (scores and plot)
-                                          [default: ./results/plots]
+    Arguments:
+        UNIREF_DB                             Path to Uniref database.
+
+    Options:
+        -h, --help                            Show this
+        -s SCORE, --selected_score SCORE      Score for which you wish to see the statistics:
+                                              &quot;alignment&quot;, &quot;threading&quot;, &quot;modeller&quot;,
+                                              &quot;secondary_structure&quot;, &quot;solvent_access&quot;
+                                              or &quot;sum_scores&quot;,
+                                              or all of them at once: &quot;all&quot; [default: all]
+        -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
+                                              using all available (0).
+                                              [default: 0]
+        -o PATH, --output PATH                Path to the directory containing
+                                              the result files (scores and plot)
+                                              [default: ./results/plots]
 </pre></div>
 </div>
 <div class="section" id="results">
 <h3>Results<a class="headerlink" href="#results" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="top-n-tables">
 <h4>Top N tables<a class="headerlink" href="#top-n-tables" title="Permalink to this headline">¶</a></h4>
+<p>Results for the benchmark done with the merged program (upstream + downstream)</p>
 <div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>Table summarizing the top N results.
 
-          Family    Superfamily   Fold       Total
+         Family    Superfamily    Fold        Total
 
-top 5     0/1       1/6           2/13       3/20
-          0.0  %    16.7 %        15.4 %     15.0 %
------------------------------------------------------
-top 10    0/1       2/6           2/13       4/20
-          0.0  %    33.3 %        15.4 %     20.0 %
------------------------------------------------------
-top 15    0/1       3/6           2/13       5/20
-          0.0  %    50.0 %        15.4 %     25.0 %
------------------------------------------------------
-top 20    0/1       3/6           2/13       5/20
-          0.0  %    50.0 %        15.4 %     25.0 %
------------------------------------------------------
-top 25    0/1       3/6           3/13       6/20
-          0.0  %    50.0 %        23.1 %     30.0 %
------------------------------------------------------
-top 50    0/1       4/6           6/13       10/20
-          0.0  %    66.7 %        46.2 %     50.0 %
------------------------------------------------------
-top 75    0/1       4/6           7/13       11/20
-          0.0  %    66.7 %        53.8 %     55.0 %
------------------------------------------------------
-top 100   0/1       4/6           8/13       12/20
-          0.0  %    66.7 %        61.5 %     60.0 %
------------------------------------------------------
-top 150   0/1       5/6           8/13       13/20
-          0.0  %    83.3 %        61.5 %     65.0 %
------------------------------------------------------
-top 200   0/1       5/6           10/13      15/20
-          0.0  %    83.3 %        76.9 %     75.0 %
------------------------------------------------------
-top 250   0/1       6/6           11/13      17/20
-          0.0  %    100.0%        84.6 %     85.0 %
------------------------------------------------------
-top 300   0/1       6/6           13/13      19/20
-          0.0  %    100.0%        100.0%     95.0 %
------------------------------------------------------
-top 350   1/1       6/6           13/13      20/20
-          100.0%    100.0%        100.0%     100.0%
------------------------------------------------------
+top 5    0/1       0/6            1/13        1/19
+         0.0  %    0.0  %         7.7  %      5.3  %
+----------------------------------------------------
+top 10   0/1       2/6            1/13        3/19
+         0.0  %    33.3 %         7.7  %      15.8 %
+----------------------------------------------------
+top 15   0/1       2/6            1/13        3/19
+         0.0  %    33.3 %         7.7  %      15.8 %
+----------------------------------------------------
+top 20   0/1       2/6            1/13        3/19
+         0.0  %    33.3 %         7.7  %      15.8 %
+----------------------------------------------------
+top 25   0/1       2/6            1/13        3/19
+         0.0  %    33.3 %         7.7  %      15.8 %
+----------------------------------------------------
+top 50   0/1       3/6            3/13        6/19
+         0.0  %    50.0 %         23.1 %      31.6 %
+----------------------------------------------------
+top 75   0/1       4/6            5/13        9/19
+         0.0  %    66.7 %         38.5 %      47.4 %
+----------------------------------------------------
+top 100  0/1       5/6            6/13        11/19
+         0.0  %    83.3 %         46.2 %      57.9 %
+----------------------------------------------------
+top 150  0/1       5/6            7/13        12/19
+         0.0  %    83.3 %         53.8 %      63.2 %
+----------------------------------------------------
+top 200  0/1       5/6            7/13        12/19
+         0.0  %    83.3 %         53.8 %      63.2 %
+----------------------------------------------------
+top 250  0/1       6/6            8/13        14/19
+         0.0  %    100.0%         61.5 %      73.7 %
+----------------------------------------------------
+top 300  0/1       6/6            9/13        15/19
+         0.0  %    100.0%         69.2 %      78.9 %
+----------------------------------------------------
+top 350  1/1       6/6            12/13       19/19
+         100.0%    100.0%         92.3 %      100.0%
+----------------------------------------------------
+</pre></div>
+</div>
+<p>Results for the benchmark done with the merged program (upstream + downstream) <strong>with templates ranked with the machine learning weights.</strong>
+We can see that the program is less specific and more sensitive. The machine learning make the program find the benchmarks less fast than without, but all benchmarks are found faster than without machine learning ! That is important as it enables the program to work for more kinds of proteins.</p>
+<div class="highlight-guess notranslate"><div class="highlight"><pre><span></span>Table summarizing the top N results.
+
+         Family    Superfamily    Fold        Total
+
+top 5    0/1       0/6            0/13        0/20
+         0.0  %    0.0  %         0.0  %      0.0  %
+----------------------------------------------------
+top 10   0/1       0/6            0/13        0/20
+         0.0  %    0.0  %         0.0  %      0.0  %
+----------------------------------------------------
+top 15   0/1       0/6            1/13        1/20
+         0.0  %    0.0  %         7.7  %      5.0  %
+----------------------------------------------------
+top 20   0/1       1/6            3/13        4/20
+         0.0  %    16.7 %         23.1 %      20.0 %
+----------------------------------------------------
+top 25   0/1       1/6            3/13        4/20
+         0.0  %    16.7 %         23.1 %      20.0 %
+----------------------------------------------------
+top 50   0/1       3/6            3/13        6/20
+         0.0  %    50.0 %         23.1 %      30.0 %
+----------------------------------------------------
+top 75   0/1       4/6            4/13        8/20
+         0.0  %    66.7 %         30.8 %      40.0 %
+----------------------------------------------------
+top 100  0/1       4/6            6/13        10/20
+         0.0  %    66.7 %         46.2 %      50.0 %
+----------------------------------------------------
+top 150  0/1       5/6            9/13        14/20
+         0.0  %    83.3 %         69.2 %      70.0 %
+----------------------------------------------------
+top 200  0/1       6/6            12/13       18/20
+         0.0  %    100.0%         92.3 %      90.0 %
+----------------------------------------------------
+top 250  1/1       6/6            13/13       20/20
+         100.0%    100.0%         100.0%      100.0%
+----------------------------------------------------
+top 300  1/1       6/6            13/13       20/20
+         100.0%    100.0%         100.0%      100.0%
+----------------------------------------------------
+top 350  1/1       6/6            13/13       20/20
+         100.0%    100.0%         100.0%      100.0%
+----------------------------------------------------
 </pre></div>
 </div>
 </div>
 <div class="section" id="generated-plot">
 <h4>Generated plot<a class="headerlink" href="#generated-plot" title="Permalink to this headline">¶</a></h4>
 <p align="center">
-  <img width="500" src="results/plots/all_scores_plot.png" alt="Enrichment"/>
+  <img width="750" src="results/queries/plots/all_scores_plot.png" alt="Enrichment"/>
 </p></div>
 </div>
 </div>
@@ -397,7 +445,6 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
 <div class="section" id="acknowledgment">
 <h2>Acknowledgment<a class="headerlink" href="#acknowledgment" title="Permalink to this headline">¶</a></h2>
 <p>Thanks to <a class="reference external" href="https://www.linkedin.com/in/maitewho/">Maïté Cretin</a> for the nice logo.</p>
-<p>Thanks to team 1 and team 2 for generating to us multiple alignment files (<code class="docutils literal notranslate"><span class="pre">data/aln</span></code>).</p>
 </div>
 <div class="section" id="license">
 <h2>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h2>
@@ -418,17 +465,17 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
 
 
            </div>
-           
+
           </div>
           <footer>
-  
+
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
+
         <a href="alignment.html" class="btn btn-neutral float-right" title="Alignment" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
+
+
     </div>
-  
+
 
   <hr/>
 
@@ -438,7 +485,7 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 
@@ -448,15 +495,15 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
     </section>
 
   </div>
-  
 
 
-  
+
+
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'./',
-            VERSION:'2.1',
+            VERSION:'3.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -469,7 +516,7 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
       <script type="text/javascript" src="_static/doctools.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  
+
 
   <script type="text/javascript" src="_static/js/theme.js"></script>
 
@@ -477,7 +524,7 @@ The R script <code class="docutils literal notranslate"><span class="pre">script
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
 
 </body>
 </html>

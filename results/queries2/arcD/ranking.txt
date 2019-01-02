@@ -1,0 +1,26 @@
+Rank              Template      Weighted Combined Scores
+********************************************************
+1                   aldedh      1.0000
+2             Ald_Xan_dh_2      0.9614
+3              AMP-binding      0.9442
+4                     AFOR      0.9416
+5                aconitase      0.9339
+6               ADP_PFK_GK      0.9246
+7          alk_phosphatase      0.9158
+8                  Amidase      0.8343
+9                    actin      0.7265
+10                 annexin      0.5488
+11           alpha-amylase      0.4574
+12                aakinase      0.4564
+13         AP_endonucleas1      0.4046
+14             aminotran_4      0.3532
+15          Ala_racemase_N      0.3267
+16             Aldolase_II      0.3019
+17            Ald_Xan_dh_1      0.1956
+18             adeno_fiber      0.1465
+19               Amidase_2      0.1367
+20        Amino_oxidase_D2      0.1170
+21                    ACPS      0.0534
+22                   ANATO      0.0407
+23         7kD_DNA_binding      0.0124
+24            Arch_histone      0.0000

@@ -13,14 +13,17 @@
     percentage of benchmarks for the TOP N found.
 
     Usage:
-        ./script/benchmarking.py [--selected_score SCORE] [--cpu NUM] [--output PATH]
+        ./script/benchmarking.py UNIREF_DB [--selected_score SCORE] [--cpu NUM] [--output PATH]
+
+    Arguments:
+        UNIREF_DB                             Path to Uniref database.
 
     Options:
         -h, --help                            Show this
         -s SCORE, --selected_score SCORE      Score for which you wish to see the statistics:
                                               "alignment", "threading", "modeller",
-                                              "secondary_structure", "solvent_access"
-                                              or "sum_scores",
+                                              "secondary_structure", "solvent_access",
+                                              "sum_scores" or "weighted_combined_scores",
                                               or all of them at once: "all" [default: all]
         -c NUM, --cpu NUM                     Number of cpus to use for parallelisation. By default
                                               using all available (0).
@@ -59,8 +62,9 @@ def check_args():
     schema = Schema({
         '--selected_score': And(Use(str), lambda s: s in ["alignment", "threading",
                                                           "modeller", "secondary_structure",
-                                                          "solvent_access", "sum_scores",
-                                                          "weighted_combined_scores", "all"],
+                                                          "solvent_access", "co_evolution",
+                                                          "sum_scores", "weighted_combined_scores",
+                                                          "all"],
                                 error='SCORES should be an existing score'),
         '--cpu': And(Use(int), lambda n: 0 <= n <= cpu_count(),
                      error='--cpus=NUM should be integer 1 <= N <= ' + str(cpu_count())),
@@ -71,17 +75,35 @@ def check_args():
     except SchemaError as err:
         exit(err)
 
-def create_benchmarking_scores_dict(scores, structures, nb_proc):
+def run_command(command):
+    """
+        Run the FOLD_U program. It keeps on reading the stdout, checks for the return code and
+        displays the output messages and the progress bar in real time.
+
+        Args:
+            command (str): The command line to run
+    """
+    # Run the command
+    process = subprocess.Popen(command, stdout=subprocess.PIPE)
+    # This part is to print the running program messages
+    while True:
+        line = process.stdout.readline()
+        if not line:
+            break
+        else:
+            print(line.decode('utf-8').strip())
+
+def create_benchmarking_scores_dict(uniref, scores, structures, nb_proc):
     """
         Create a dictionary of scores with key = a score, value = a pandas dataframe
         which contains the cumulative sum of benchmark for each benchmark type and for
         all benchmarks (=4 columns).
 
         Args:
+            uniref (str): Path to the uniref90 database
             scores (list): A list of score name
             structures (list): List containing fold types: "Family", "Superfamily", "Fold"
             nb_proc (int): Number of processors.
-
 
         Returns:
             dict: The dictionary of scores with key = a score, value = a pandas dataframe.
@@ -92,19 +114,17 @@ def create_benchmarking_scores_dict(scores, structures, nb_proc):
     for score in scores:
         benchmarking_scores[score] = pd.DataFrame(np.zeros((405, 3), dtype=int), columns=structures)
     # For each query,
-    all_foldrecs = os.listdir("data/foldrec")
+    all_foldrecs = os.listdir("data/queries")
     print("\n\nProcessing all benchmarks ...\n")
     for ind, query in enumerate(all_foldrecs, 1):
         query = query.split(".")[0]
         # The Fold_U program is run on the current query if results are not already generated
         if not os.path.isfile("results/" + query + "/scores.csv"):
             print("\nProcessing query {} / {} : {}\n".format(ind, len(all_foldrecs), query))
-            process = subprocess.Popen(["./fold_u", "data/foldrec/" + query + ".foldrec",
-                                        "data/aln/fasta/" + query + ".clustal",
-                                        "-o", "results/" + query,
-                                        "--cpu", str(nb_proc)], stdout=subprocess.PIPE).communicate()[0]
-            rows, columns = os.popen('stty size', 'r').read().split()
-            print("\n" + "-"*int(columns))
+            run_command(["./fold_u", "data/queries/" + query + "/"+ query + ".fasta", uniref, "-o",
+                         "results/" + query, "-c", str(nb_proc)])
+            _, columns = os.popen('stty size', 'r').read().split()
+            print("\n" + "-" * int(columns))
         # Score results are stored in a pandas DataFrame
         query_scores = pd.read_csv("results/" + query + "/scores.csv", index_col=0)
         if len(query_scores) < min_rank:
@@ -144,7 +164,7 @@ def plot_benchmark(output_path, min_rank, scores, benchmarking_scores, selected_
     rank = [i for i in range(0, min_rank)]
     os.makedirs(output_path, exist_ok=True)
     # Plot creation
-    plt.figure(num="Enrichment")  # Window's name
+    plt.figure(num="Enrichment", figsize=(10, 6))  # Window's name
     plt.ylabel("Benchmark")
     plt.xlabel("rank")
 
@@ -199,7 +219,7 @@ def print_top_n(selected_score, top, benchmarking_scores):
     rank = {}
     max_rank = {}
     if selected_score == "all":
-        selected_score = "sum_scores"
+        selected_score = "weighted_combined_scores"
     for struct in benchmarking_scores[selected_score].columns.values:
         rank[struct] = benchmarking_scores[selected_score][struct][top-1]
         max_rank[struct] = max(benchmarking_scores[selected_score][struct])
@@ -240,6 +260,8 @@ if __name__ == "__main__":
     # Check the types and ranges of the command line arguments parsed by docopt
     check_args()
 
+    # Uniref database
+    UNIREF = ARGUMENTS["UNIREF_DB"]
     # OUTPUT file
     OUTPUT_PATH = ARGUMENTS["--output"]
     # Number of cpus for parallelisation
@@ -252,7 +274,7 @@ if __name__ == "__main__":
     SCORES = ["alignment", "threading", "modeller", "secondary_structure", "solvent_access",
               "co_evolution", "sum_scores", "weighted_combined_scores"]
 
-    (BENCHMARKING_SCORES, MIN_RANK) = create_benchmarking_scores_dict(SCORES, STRUCTURES,
+    (BENCHMARKING_SCORES, MIN_RANK) = create_benchmarking_scores_dict(UNIREF, SCORES, STRUCTURES,
                                                                       NB_PROC)
 
     print_table(SELECTED_SCORE, BENCHMARKING_SCORES)

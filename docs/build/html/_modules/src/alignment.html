@@ -5,63 +5,63 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>src.alignment &mdash; Fold U 2.1 documentation</title>
-  
 
-  
-  
-  
-  
+  <title>src.alignment &mdash; Fold U 3.0 documentation</title>
 
-  
 
-  
-  
-    
 
-  
+
+
+
+
+
+
+
+
+
+
+
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
 
-  
+
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
 
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
-          
 
-          
+
+
             <a href="../../index.html" class="icon icon-home"> Fold U
-          
 
-          
+
+
           </a>
 
-          
-            
-            
-              <div class="version">
-                2.1
-              </div>
-            
-          
 
-          
+
+
+              <div class="version">
+                3.0
+              </div>
+
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -70,16 +70,16 @@
   </form>
 </div>
 
-          
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+
+
+
+
+
+
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../alignment.html">Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../template.html">Template</a></li>
@@ -90,28 +90,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../parsing.html">Parsing</a></li>
 </ul>
 
-            
-          
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
+
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Fold U</a>
-        
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
+
+
 
 
 
@@ -130,26 +130,26 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
-    
+
       <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+
           <li><a href="../index.html">Module code</a> &raquo;</li>
-        
+
       <li>src.alignment</li>
-    
-    
+
+
       <li class="wy-breadcrumbs-aside">
-        
+
       </li>
-    
+
   </ul>
 
-  
+
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+
   <h1>Source code for src.alignment</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">.. module:: Alignment</span>
@@ -171,7 +171,7 @@
 <span class="kn">import</span> <span class="nn">modeller.automodel</span> <span class="k">as</span> <span class="nn">am</span>
 <span class="kn">from</span> <span class="nn">modeller.automodel</span> <span class="k">import</span> <span class="n">assess</span>
 
-<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;run_warnings.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;log/run_warnings.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
 <span class="n">logging</span><span class="o">.</span><span class="n">captureWarnings</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
 
@@ -456,7 +456,7 @@
             <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>\
             <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist_inv</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist_inv</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">):</span>
                 <span class="n">true_pos</span> <span class="o">+=</span> <span class="mi">1</span>
-        
+
         <span class="c1"># Spread of the values</span>
         <span class="n">contact_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">true_pos</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">last</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">first</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">contact_score</span></div>
@@ -466,14 +466,13 @@
 <span class="sd">             Calculate the accessibility score between the predicted model</span>
 <span class="sd">             and the template pdb structure.</span>
 <span class="sd">             Args:</span>
-<span class="sd">                 dssp_bin (String): Path to the dssp binary.</span>
 <span class="sd">                 threshold cutoff (int): Cutoff for relative accessibility residue values.</span>
 <span class="sd">             Returns:</span>
 <span class="sd">                 float: The Accessibility score calculated</span>
 <span class="sd">         &#39;&#39;&#39;</span>
          <span class="c1"># Path to the PDBs of predicted and template models</span>
-         <span class="n">pred_model_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">modeller_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
-         <span class="n">template_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">reindexed_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
+         <span class="n">pred_model_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/templates/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">modeller_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
+         <span class="n">template_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/templates/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">reindexed_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
          <span class="c1"># Parse PDBs</span>
          <span class="n">pred_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;pred_model&quot;</span><span class="p">,</span> <span class="n">pred_model_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
          <span class="n">template_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;template_model&quot;</span><span class="p">,</span> <span class="n">template_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
@@ -555,7 +554,7 @@
         <span class="c1"># MODELLER generates the result files in his current directory, so we must</span>
         <span class="c1"># go to the results directory and come back to root dir afterwards.</span>
         <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">modeller_out_dir</span><span class="p">)</span>
-        <span class="n">path_to_atm</span> <span class="o">=</span> <span class="n">root_dir</span> <span class="o">+</span> <span class="s2">&quot;/data/pdb/&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span>
+        <span class="n">path_to_atm</span> <span class="o">=</span> <span class="n">root_dir</span> <span class="o">+</span> <span class="s2">&quot;/data/templates/&quot;</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span>
         <span class="c1"># We reindex all the PDB files to avoid any problem with modeller</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">reindex_pdb</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">path_to_atm</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
         <span class="c1"># Parse the new PDB to get new residues and their coordinates generated by MODELLER</span>
@@ -678,10 +677,10 @@
 </pre></div>
 
            </div>
-           
+
           </div>
           <footer>
-  
+
 
   <hr/>
 
@@ -691,7 +690,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 
@@ -701,15 +700,15 @@
     </section>
 
   </div>
-  
 
 
-  
+
+
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.1',
+            VERSION:'3.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -722,7 +721,7 @@
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  
+
 
   <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -730,7 +729,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
 
 </body>
 </html>

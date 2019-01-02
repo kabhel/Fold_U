@@ -5,63 +5,63 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <title>src.score &mdash; Fold U 2.1 documentation</title>
-  
 
-  
-  
-  
-  
+  <title>src.score &mdash; Fold U 3.0 documentation</title>
 
-  
 
-  
-  
-    
 
-  
+
+
+
+
+
+
+
+
+
+
+
 
   <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
+    <link rel="search" title="Search" href="../../search.html" />
 
-  
+
   <script src="../../_static/js/modernizr.min.js"></script>
 
 </head>
 
 <body class="wy-body-for-nav">
 
-   
+
   <div class="wy-grid-for-nav">
 
-    
+
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search">
-          
 
-          
+
+
             <a href="../../index.html" class="icon icon-home"> Fold U
-          
 
-          
+
+
           </a>
 
-          
-            
-            
-              <div class="version">
-                2.1
-              </div>
-            
-          
 
-          
+
+
+              <div class="version">
+                3.0
+              </div>
+
+
+
+
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -70,16 +70,16 @@
   </form>
 </div>
 
-          
+
         </div>
 
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+
+
+
+
+
+
               <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../alignment.html">Alignment</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../template.html">Template</a></li>
@@ -90,28 +90,28 @@
 <li class="toctree-l1"><a class="reference internal" href="../../parsing.html">Parsing</a></li>
 </ul>
 
-            
-          
+
+
         </div>
       </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
 
-      
+
       <nav class="wy-nav-top" aria-label="top navigation">
-        
+
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../index.html">Fold U</a>
-        
+
       </nav>
 
 
       <div class="wy-nav-content">
-        
+
         <div class="rst-content">
-        
-          
+
+
 
 
 
@@ -130,26 +130,26 @@
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
-    
+
       <li><a href="../../index.html">Docs</a> &raquo;</li>
-        
+
           <li><a href="../index.html">Module code</a> &raquo;</li>
-        
+
       <li>src.score</li>
-    
-    
+
+
       <li class="wy-breadcrumbs-aside">
-        
+
       </li>
-    
+
   </ul>
 
-  
+
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+
   <h1>Source code for src.score</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    .. module:: Score</span>
@@ -163,7 +163,25 @@
 
 <div class="viewcode-block" id="normalize_score"><a class="viewcode-back" href="../../score.html#src.score.normalize_score">[docs]</a><span class="k">def</span> <span class="nf">normalize_score</span><span class="p">(</span><span class="n">score_type</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Normalization of a score using the min-max scaling method (values between 0 and 1).</span>
+<span class="sd">        Normalization of a score using the min-max scaling method (values between 0 and 1):</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">          zscore = {score - min(score) \over max(score) - min(score)}</span>
+
+<span class="sd">        The Robust Z-Score for normalisation is not giving better results because it is usually</span>
+<span class="sd">        used to better detect outliers, the formula is:</span>
+
+<span class="sd">        .. math::</span>
+
+<span class="sd">          { | x-med(x) | \over mad(x)}</span>
+
+<span class="sd">        where:</span>
+<span class="sd">        rz = Robust Zscore</span>
+
+<span class="sd">        med(x) = Median</span>
+
+<span class="sd">        mad = Median absolute deviation</span>
 
 <span class="sd">        Args:</span>
 <span class="sd">            score_type (Pandas Series): A score</span>
@@ -207,10 +225,10 @@
         <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">res_path</span><span class="o">+</span><span class="s2">&quot;/pdb&quot;</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
         <span class="c1"># A dataframe is created with pandas and elements of the iterator are stored</span>
-        <span class="n">scores_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;benchmark&#39;</span><span class="p">,</span> <span class="s1">&#39;alignment&#39;</span><span class="p">,</span> <span class="s1">&#39;threading&#39;</span><span class="p">,</span> <span class="s1">&#39;modeller&#39;</span><span class="p">,</span>\
-                                <span class="s1">&#39;secondary_structure&#39;</span><span class="p">,</span> <span class="s1">&#39;solvent_access&#39;</span><span class="p">,</span> <span class="s1">&#39;co_evolution&#39;</span><span class="p">])</span>
+        <span class="n">scores_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;benchmark&#39;</span><span class="p">,</span> <span class="s1">&#39;alignment&#39;</span><span class="p">,</span> <span class="s1">&#39;threading&#39;</span><span class="p">,</span> <span class="s1">&#39;modeller&#39;</span><span class="p">,</span>
+                                          <span class="s1">&#39;secondary_structure&#39;</span><span class="p">,</span> <span class="s1">&#39;solvent_access&#39;</span><span class="p">,</span> <span class="s1">&#39;co_evolution&#39;</span><span class="p">])</span>
         <span class="k">for</span> <span class="n">_</span><span class="p">,</span> <span class="n">ali_score</span><span class="p">,</span> <span class="n">thr_score</span><span class="p">,</span> <span class="n">modeller_score</span><span class="p">,</span> <span class="n">ss_score</span><span class="p">,</span>\
-           <span class="n">solvent_access_score</span><span class="p">,</span> <span class="n">ccmpred_score</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">benchmark</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="p">):</span>
+                <span class="n">solvent_access_score</span><span class="p">,</span> <span class="n">ccmpred_score</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">benchmark</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">iterator</span><span class="p">):</span>
             <span class="n">scores_df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">benchmark</span><span class="p">,</span> <span class="n">ali_score</span><span class="p">,</span> <span class="n">thr_score</span><span class="p">,</span> <span class="n">modeller_score</span><span class="p">,</span>
                                    <span class="n">ss_score</span><span class="p">,</span> <span class="n">solvent_access_score</span><span class="p">,</span> <span class="n">ccmpred_score</span><span class="p">]</span>
 
@@ -225,10 +243,44 @@
                                                   <span class="o">+</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;secondary_structure&#39;</span><span class="p">]</span>
                                                   <span class="o">+</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;solvent_access&#39;</span><span class="p">]</span>
                                                   <span class="o">+</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;co_evolution&#39;</span><span class="p">])</span>
-        <span class="c1"># Sort of the templates according to the sum score</span>
-        <span class="n">scores_df</span> <span class="o">=</span> <span class="n">scores_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;sum_scores&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="c1"># The machine learning was done using logistic regression with the R script located in</span>
+        <span class="c1"># scripts/machine_learning.R</span>
+        <span class="c1"># The script will find the best weights to apply to each score type in order to optimize</span>
+        <span class="c1"># the benchmarking, that is to say it will give higher weights to scores which allow to</span>
+        <span class="c1"># discriminate best the benchmarking proteins (of class Fold, Family and SuperFamily)</span>
+        <span class="c1"># The Machine Learning script was run after the benchmarking results were generated.</span>
+        <span class="c1"># The optimized weights are directly reported here to build a new column in CSV</span>
+        <span class="c1"># scores.csv file for a weighted_combined_score.</span>
+        <span class="c1"># The templates are then ranked according to this weighted_combined_scores.</span>
+        <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;weighted_combined_scores&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">normalize_score</span><span class="p">(</span>
+                                                    <span class="o">-</span><span class="mf">10.8256</span>
+                                                  <span class="o">+</span> <span class="mf">4.5026</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;alignment&#39;</span><span class="p">]</span>
+                                                  <span class="o">+</span> <span class="o">-</span><span class="mf">0.0764</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;threading&#39;</span><span class="p">]</span>
+                                                  <span class="o">+</span> <span class="mf">1.0713</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;modeller&#39;</span><span class="p">]</span>
+                                                  <span class="o">+</span> <span class="mf">3.8989</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;secondary_structure&#39;</span><span class="p">]</span>
+                                                  <span class="o">+</span> <span class="o">-</span><span class="mf">2.7788</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;solvent_access&#39;</span><span class="p">]</span>
+                                                  <span class="o">+</span> <span class="o">-</span><span class="mf">1.2846</span> <span class="o">*</span> <span class="n">scores_df</span><span class="p">[</span><span class="s1">&#39;co_evolution&#39;</span><span class="p">])</span>
+
+        <span class="c1"># Sort of the templates according to the weighted_combined_scores</span>
+        <span class="n">scores_df</span> <span class="o">=</span> <span class="n">scores_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;weighted_combined_scores&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
         <span class="c1"># A csv file containing the normalized scores is created</span>
         <span class="n">scores_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">res_path</span><span class="o">+</span><span class="s2">&quot;/scores.csv&quot;</span><span class="p">)</span>
+
+        <span class="c1"># Write the required ranking output with columns: Rank | Family | Score</span>
+        <span class="n">ranked_scores_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">res_path</span><span class="o">+</span><span class="s2">&quot;/scores.csv&quot;</span><span class="p">)</span>
+        <span class="n">ranks</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ranked_scores_df</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+        <span class="n">tmp</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">ranks</span><span class="p">,</span> <span class="n">ranked_scores_df</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">tmp</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">,</span> <span class="s1">&#39;Template&#39;</span><span class="p">,</span> <span class="s1">&#39;benchmark&#39;</span><span class="p">,</span> <span class="s1">&#39;alignment&#39;</span><span class="p">,</span> <span class="s1">&#39;threading&#39;</span><span class="p">,</span> <span class="s1">&#39;modeller&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;secondary_structure&#39;</span><span class="p">,</span> <span class="s1">&#39;solvent_access&#39;</span><span class="p">,</span> <span class="s1">&#39;co_evolution&#39;</span><span class="p">,</span> <span class="s1">&#39;sum_scores&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;weighted_combined_scores&#39;</span><span class="p">]</span>
+        <span class="n">ranked_scores_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;Rank&quot;</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="s2">&quot;Template&quot;</span><span class="p">],</span> <span class="n">tmp</span><span class="p">[</span><span class="s1">&#39;weighted_combined_scores&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">res_path</span><span class="o">+</span> <span class="s2">&quot;/ranking.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f_out</span><span class="p">:</span>
+            <span class="n">f_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{}{:&gt;22}{:&gt;30}</span><span class="se">\n</span><span class="si">{}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;Rank&quot;</span><span class="p">,</span> <span class="s2">&quot;Template&quot;</span><span class="p">,</span> <span class="s2">&quot;Weighted Combined Scores&quot;</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="o">*</span><span class="mi">56</span><span class="p">))</span>
+            <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ranked_scores_df</span><span class="o">.</span><span class="n">iterrows</span><span class="p">():</span>
+                <span class="n">f_out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{:&lt;3}{:&gt;23}{:&gt;12.4f}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Rank&quot;</span><span class="p">]),</span>
+                                                            <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;Template&quot;</span><span class="p">]),</span>
+                                                            <span class="n">row</span><span class="p">[</span><span class="s2">&quot;weighted_combined_scores&quot;</span><span class="p">]))</span>
 
         <span class="c1"># Only nb_pdb pdb files are created</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">nb_pdb</span><span class="p">):</span>
@@ -237,10 +289,10 @@
 </pre></div>
 
            </div>
-           
+
           </div>
           <footer>
-  
+
 
   <hr/>
 
@@ -250,7 +302,7 @@
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 
 </footer>
 
@@ -260,15 +312,15 @@
     </section>
 
   </div>
-  
 
 
-  
+
+
 
     <script type="text/javascript">
         var DOCUMENTATION_OPTIONS = {
             URL_ROOT:'../../',
-            VERSION:'2.1',
+            VERSION:'3.0',
             LANGUAGE:'None',
             COLLAPSE_INDEX:false,
             FILE_SUFFIX:'.html',
@@ -281,7 +333,7 @@
       <script type="text/javascript" src="../../_static/doctools.js"></script>
       <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
-  
+
 
   <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
@@ -289,7 +341,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
 
 </body>
 </html>

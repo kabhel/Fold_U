@@ -1,0 +1,993 @@
+PSIBLAST 2.6.0+
+
+
+Reference: Stephen F. Altschul, Thomas L. Madden, Alejandro A.
+Schaffer, Jinghui Zhang, Zheng Zhang, Webb Miller, and David J.
+Lipman (1997), "Gapped BLAST and PSI-BLAST: a new generation of
+protein database search programs", Nucleic Acids Res. 25:3389-3402.
+
+
+Reference for compositional score matrix adjustment: Stephen F.
+Altschul, John C. Wootton, E. Michael Gertz, Richa Agarwala,
+Aleksandr Morgulis, Alejandro A. Schaffer, and Yi-Kuo Yu (2005)
+"Protein database searches using compositionally adjusted
+substitution matrices", FEBS J. 272:5101-5109.
+
+
+Reference for composition-based statistics starting in round 2:
+Alejandro A. Schaffer, L. Aravind, Thomas L. Madden, Sergei
+Shavirin, John L. Spouge, Yuri I. Wolf, Eugene V. Koonin, and
+Stephen F. Altschul (2001), "Improving the accuracy of PSI-BLAST
+protein database searches with composition-based statistics and
+other refinements", Nucleic Acids Res. 29:2994-3005.
+
+
+
+Database: uniref90.fasta
+           85,423,779 sequences; 28,649,048,249 total letters
+
+Results from round 1
+
+
+Query= trQ6HLB4
+
+Length=87
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+
+  UniRef90_Q73B56 Uncharacterized protein n=223 Tax=Bacteria TaxI...  174     8e-55
+  UniRef90_A0A2C4Q8I8 Uncharacterized protein n=1 Tax=Bacillus to...  173     1e-54
+  UniRef90_A0A2B5LEL4 Uncharacterized protein n=24 Tax=Bacillus T...  173     1e-54
+  UniRef90_K0FKM6 Group-specific protein n=28 Tax=Bacilli TaxID=9...  172     1e-54
+  UniRef90_A0A2A8J2G4 Uncharacterized protein n=7 Tax=Bacillus Ta...  171     9e-54
+  UniRef90_F0PUM9 Uncharacterized protein n=54 Tax=Bacillus TaxID...  169     2e-53
+  UniRef90_A0A160HBC0 Uncharacterized protein n=6 Tax=Bacillus ce...  169     2e-53
+  UniRef90_A0A2A8PP44 DUF3992 domain-containing protein n=6 Tax=B...  167     1e-52
+  UniRef90_A0A2A8LRG0 Uncharacterized protein n=2 Tax=Bacillus ce...  165     1e-51
+  UniRef90_J9CBP8 Uncharacterized protein n=82 Tax=Bacillaceae Ta...  164     5e-51
+  UniRef90_A0A2B3TZC1 Uncharacterized protein n=3 Tax=Bacillus Ta...  162     8e-51
+  UniRef90_UPI0002DA5B5C DUF3992 domain-containing protein n=1 Ta...  144     1e-43
+  UniRef90_A0A2A8RRP3 Uncharacterized protein n=1 Tax=Bacillus ce...  144     1e-43
+  UniRef90_A0A1S8G999 Uncharacterized protein n=12 Tax=Bacillus c...  140     4e-42
+  UniRef90_A0A2B0MQL3 Uncharacterized protein n=1 Tax=Bacillus ce...  135     7e-40
+  UniRef90_UPI000A37330D DUF3992 domain-containing protein n=1 Ta...  132     6e-39
+  UniRef90_A0A090YKK4 Uncharacterized protein n=2 Tax=Bacillus Ta...  131     1e-38
+  UniRef90_A0A073KAY6 Uncharacterized protein n=1 Tax=Bacillus ga...  130     5e-38
+  UniRef90_C2W5V9 Uncharacterized protein n=1 Tax=Bacillus cereus...  121     1e-34
+  UniRef90_A0A1H3PP02 Uncharacterized protein n=1 Tax=Bacillus sp...  61.6    5e-11
+  UniRef90_A0A2C2UL17 Uncharacterized protein n=2 Tax=Bacillus Ta...  60.8    1e-10
+  UniRef90_A0A1Q9PHM1 Uncharacterized protein n=1 Tax=Bacillus sp...  38.5    0.077
+  UniRef90_A0A0N1CKS1 Bleomycin resistance protein n=3 Tax=Mycoba...  38.1    0.23
+  UniRef90_K6X0R6 Exodeoxyribonuclease I n=3 Tax=Alteromonadaceae...  37.4    0.88
+  UniRef90_UPI000C04492A transcription factor bHLH154-like isofor...  35.4    2.0
+  UniRef90_A0A1U8B202 RNA-binding protein NOB1-like n=2 Tax=Nelum...  35.8    2.5
+  UniRef90_A0A170YGB2 MG2 domain-containing protein n=1 Tax=Palud...  35.0    5.6
+  UniRef90_UPI000C03E376 transcription factor bHLH153-like isofor...  34.7    5.9
+  UniRef90_UPI000525CF1D DegT/DnrJ/EryC1/StrS family aminotransfe...  34.3    8.0
+
+
+> UniRef90_Q73B56 Uncharacterized protein n=223 Tax=Bacteria TaxID=2
+RepID=Q73B56_BACC1
+Length=124
+
+ Score = 174 bits (440),  Expect = 8e-55, Method: Compositional matrix adjust.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFL+KQE+CYDVVK
+Sbjct  38   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLIKQEECYDVVK  97
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNIDYYTKAYKISSFNHTAYQ
+Sbjct  98   VETVDTNIDYYTKAYKISSFNHTAYQ  123
+
+
+> UniRef90_A0A2C4Q8I8 Uncharacterized protein n=1 Tax=Bacillus
+toyonensis TaxID=155322 RepID=A0A2C4Q8I8_9BACI
+Length=109
+
+ Score = 173 bits (438),  Expect = 1e-54, Method: Compositional matrix adjust.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNI+YYTKAYKISSFNHTAYQ
+Sbjct  83   VETVDTNIEYYTKAYKISSFNHTAYQ  108
+
+
+> UniRef90_A0A2B5LEL4 Uncharacterized protein n=24 Tax=Bacillus
+TaxID=55087 RepID=A0A2B5LEL4_9BACI
+Length=109
+
+ Score = 173 bits (438),  Expect = 1e-54, Method: Compositional matrix adjust.
+ Identities = 85/87 (98%), Positives = 86/87 (99%), Gaps = 0/87 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQK  87
+            VETVDTNI+YYTKAYKISSFNHT YQK
+Sbjct  83   VETVDTNIEYYTKAYKISSFNHTVYQK  109
+
+
+> UniRef90_K0FKM6 Group-specific protein n=28 Tax=Bacilli TaxID=91061
+RepID=K0FKM6_BACTU
+Length=98
+
+ Score = 172 bits (437),  Expect = 1e-54, Method: Compositional matrix adjust.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  12  MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEDCYDVVK  71
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNI+YYTKAYKISSFNHTAYQ
+Sbjct  72  VETVDTNIEYYTKAYKISSFNHTAYQ  97
+
+
+> UniRef90_A0A2A8J2G4 Uncharacterized protein n=7 Tax=Bacillus
+TaxID=55087 RepID=A0A2A8J2G4_BACCE
+Length=109
+
+ Score = 171 bits (432),  Expect = 9e-54, Method: Compositional matrix adjust.
+ Identities = 81/86 (94%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMD+SKKLGDYVNALQALCEQYNVETD+IAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDQSKKLGDYVNALQALCEQYNVETDRIAIIEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNID+YTKAYKISSFNH+AYQ
+Sbjct  83   VETVDTNIDFYTKAYKISSFNHSAYQ  108
+
+
+> UniRef90_F0PUM9 Uncharacterized protein n=54 Tax=Bacillus TaxID=55087
+RepID=F0PUM9_BACT0
+Length=87
+
+ Score = 169 bits (428),  Expect = 2e-53, Method: Compositional matrix adjust.
+ Identities = 83/87 (95%), Positives = 86/87 (99%), Gaps = 0/87 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGM KSKKLGDYVNALQALCE+YNVETDKIAIVEATEEYYLFLVKQE+CYDVVK
+Sbjct  1   MLVQTIFGMGKSKKLGDYVNALQALCEEYNVETDKIAIVEATEEYYLFLVKQEECYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQK  87
+           VETVDTNIDYYTKAYKISSFNH+AYQK
+Sbjct  61  VETVDTNIDYYTKAYKISSFNHSAYQK  87
+
+
+> UniRef90_A0A160HBC0 Uncharacterized protein n=6 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A160HBC0_BACCE
+Length=87
+
+ Score = 169 bits (427),  Expect = 2e-53, Method: Compositional matrix adjust.
+ Identities = 81/86 (94%), Positives = 85/86 (99%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYVN LQALCEQYNVETDKIAI+EATEEYYLFL+KQ+DCYDVVK
+Sbjct  1   MLVQTIFGMDKSKKLGDYVNVLQALCEQYNVETDKIAIIEATEEYYLFLIKQDDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYT+AYKISSFNHTAYQ
+Sbjct  61  VETVDTNIDYYTRAYKISSFNHTAYQ  86
+
+
+> UniRef90_A0A2A8PP44 DUF3992 domain-containing protein n=6 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A2A8PP44_BACCE
+Length=87
+
+ Score = 167 bits (422),  Expect = 1e-52, Method: Compositional matrix adjust.
+ Identities = 79/86 (92%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYV+ALQALCEQYNVET++IAI+EATEEYYLFLVKQEDCYDV+K
+Sbjct  1   MLVQTIFGMDKSKKLGDYVSALQALCEQYNVETERIAIIEATEEYYLFLVKQEDCYDVIK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYTKA+KISSFNH+AYQ
+Sbjct  61  VETVDTNIDYYTKAHKISSFNHSAYQ  86
+
+
+> UniRef90_A0A2A8LRG0 Uncharacterized protein n=2 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2A8LRG0_BACCE
+Length=109
+
+ Score = 165 bits (417),  Expect = 1e-51, Method: Compositional matrix adjust.
+ Identities = 80/86 (93%), Positives = 84/86 (98%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALC QYNVETD+I IVEATEEYYLFLVKQE+CYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCGQYNVETDRITIVEATEEYYLFLVKQEECYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDT+IDYYTKAYKISSFNH+AYQ
+Sbjct  83   VETVDTDIDYYTKAYKISSFNHSAYQ  108
+
+
+> UniRef90_J9CBP8 Uncharacterized protein n=82 Tax=Bacillaceae
+TaxID=186817 RepID=J9CBP8_BACCE
+Length=118
+
+ Score = 164 bits (414),  Expect = 5e-51, Method: Compositional matrix adjust.
+ Identities = 76/86 (88%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMD++KKLG+YVNALQALCEQY++ETD+IAI+EATEEYYLFL+KQEDCYDVVK
+Sbjct  32   MLVQTIFGMDETKKLGNYVNALQALCEQYDIETDRIAIIEATEEYYLFLMKQEDCYDVVK  91
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNIDYYTKAYK+SSFNHT+YQ
+Sbjct  92   VETVDTNIDYYTKAYKVSSFNHTSYQ  117
+
+
+> UniRef90_A0A2B3TZC1 Uncharacterized protein n=3 Tax=Bacillus
+TaxID=55087 RepID=A0A2B3TZC1_BACCE
+Length=87
+
+ Score = 162 bits (410),  Expect = 8e-51, Method: Compositional matrix adjust.
+ Identities = 77/86 (90%), Positives = 85/86 (99%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMD++KKLG+YVNALQALCEQY++ETD+IAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  1   MLVQTIFGMDETKKLGNYVNALQALCEQYDIETDRIAIIEATEEYYLFLVKQEDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYTKAYK+SSFNHT YQ
+Sbjct  61  VETVDTNIDYYTKAYKVSSFNHTFYQ  86
+
+
+> UniRef90_UPI0002DA5B5C DUF3992 domain-containing protein n=1
+Tax=Bacillus bingmayongensis TaxID=1150157 RepID=UPI0002DA5B5C
+Length=87
+
+ Score = 144 bits (364),  Expect = 1e-43, Method: Compositional matrix adjust.
+ Identities = 67/86 (78%), Positives = 80/86 (93%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M KSK LG YVNALQ+L EQY++ET++IAI+EATEEYYLFL+KQ+D YDVVK
+Sbjct  1   MLVQTVFEMGKSKNLGSYVNALQSLKEQYDIETERIAIIEATEEYYLFLIKQKDSYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYK+SSFNHT+YQ
+Sbjct  61  VETVDTNLEYYTKAYKVSSFNHTSYQ  86
+
+
+> UniRef90_A0A2A8RRP3 Uncharacterized protein n=1 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2A8RRP3_BACCE
+Length=87
+
+ Score = 144 bits (363),  Expect = 1e-43, Method: Compositional matrix adjust.
+ Identities = 69/86 (80%), Positives = 81/86 (94%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M K +KLG+YVNALQAL EQY++ETD IAI+EATEEYYLFL+KQ++CYDVVK
+Sbjct  1   MLVQTVFEMGKKEKLGNYVNALQALREQYDIETDCIAIIEATEEYYLFLIKQKECYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYKISSFNHT+YQ
+Sbjct  61  VETVDTNLEYYTKAYKISSFNHTSYQ  86
+
+
+> UniRef90_A0A1S8G999 Uncharacterized protein n=12 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A1S8G999_BACMY
+Length=87
+
+ Score = 140 bits (354),  Expect = 4e-42, Method: Compositional matrix adjust.
+ Identities = 69/86 (80%), Positives = 80/86 (93%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M K+KKL +YVNALQAL EQY++ETD IAI+EATEEYYLFLVKQ DCYDVVK
+Sbjct  1   MLVQTVFEMGKNKKLENYVNALQALKEQYDIETDCIAIIEATEEYYLFLVKQTDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYKISSF+HT+Y+
+Sbjct  61  VETVDTNLEYYTKAYKISSFSHTSYR  86
+
+
+> UniRef90_A0A2B0MQL3 Uncharacterized protein n=1 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2B0MQL3_BACCE
+Length=87
+
+ Score = 135 bits (339),  Expect = 7e-40, Method: Compositional matrix adjust.
+ Identities = 67/86 (78%), Positives = 75/86 (87%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIF M K +KL  YVNALQAL EQY ++TD IAI+EATEEYYLFLVK+EDCYDVVK
+Sbjct  1   MLVQTIFEMGKKEKLEKYVNALQALREQYEIDTDCIAIIEATEEYYLFLVKKEDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN +YYTK YK+SSF+HT YQ
+Sbjct  61  VETVDTNFEYYTKVYKVSSFSHTTYQ  86
+
+
+> UniRef90_UPI000A37330D DUF3992 domain-containing protein n=1
+Tax=Bacillus thuringiensis TaxID=1428 RepID=UPI000A37330D
+Length=69
+
+ Score = 132 bits (331),  Expect = 6e-39, Method: Compositional matrix adjust.
+ Identities = 64/68 (94%), Positives = 68/68 (100%), Gaps = 0/68 (0%)
+
+Query  19  VNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNIDYYTKAYKIS  78
+           +NALQALCEQYNVETDKIAI+EATEEYYLFLVKQE+CYDVVKVETVDTNI+YYTKAYKIS
+Sbjct  1   MNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEECYDVVKVETVDTNIEYYTKAYKIS  60
+
+Query  79  SFNHTAYQ  86
+           SFNHTAYQ
+Sbjct  61  SFNHTAYQ  68
+
+
+> UniRef90_A0A090YKK4 Uncharacterized protein n=2 Tax=Bacillus
+TaxID=55087 RepID=A0A090YKK4_BACMY
+Length=83
+
+ Score = 131 bits (330),  Expect = 1e-38, Method: Compositional matrix adjust.
+ Identities = 63/85 (74%), Positives = 77/85 (91%), Gaps = 2/85 (2%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGM K+KKLG++VNALQALCE+Y++ETD++AI+EATEEY LFL KQED YDVVK
+Sbjct  1   MLVQTIFGMGKTKKLGNHVNALQALCEKYDIETDRVAIIEATEEYDLFLAKQEDGYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAY  85
+           VETVDTNI+YYT   K+S+F+HT +
+Sbjct  61  VETVDTNIEYYTN--KVSNFSHTPH  83
+
+
+> UniRef90_A0A073KAY6 Uncharacterized protein n=1 Tax=Bacillus
+gaemokensis TaxID=574375 RepID=A0A073KAY6_9BACI
+Length=87
+
+ Score = 130 bits (327),  Expect = 5e-38, Method: Compositional matrix adjust.
+ Identities = 64/86 (74%), Positives = 77/86 (90%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIF   K +KLG++VNALQAL EQY+V+TD IAI+E+ E+YYLFLVKQ+D YDVVK
+Sbjct  1   MLVQTIFETGKKEKLGNFVNALQALQEQYDVDTDCIAIIESKEDYYLFLVKQKDGYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YY KAYK+SSFNHT+YQ
+Sbjct  61  VETVDTNLEYYMKAYKVSSFNHTSYQ  86
+
+
+> UniRef90_C2W5V9 Uncharacterized protein n=1 Tax=Bacillus cereus
+Rock3-44 TaxID=526986 RepID=C2W5V9_BACCE
+Length=81
+
+ Score = 121 bits (303),  Expect = 1e-34, Method: Compositional matrix adjust.
+ Identities = 60/76 (79%), Positives = 68/76 (89%), Gaps = 0/76 (0%)
+
+Query  11  KSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNIDY  70
+           K+KKL  YVN LQAL EQY V+TD IAI+EATEEYYLFLVK+EDCYDVVKVETVDTN++Y
+Sbjct  5   KTKKLEKYVNMLQALREQYEVDTDCIAIIEATEEYYLFLVKKEDCYDVVKVETVDTNLEY  64
+
+Query  71  YTKAYKISSFNHTAYQ  86
+           YTK YK+SSF+HT YQ
+Sbjct  65  YTKVYKVSSFSHTTYQ  80
+
+
+> UniRef90_A0A1H3PP02 Uncharacterized protein n=1 Tax=Bacillus
+sp. 166amftsu TaxID=1761753 RepID=A0A1H3PP02_9BACI
+Length=63
+
+ Score = 61.6 bits (148),  Expect = 5e-11, Method: Compositional matrix adjust.
+ Identities = 28/34 (82%), Positives = 32/34 (94%), Gaps = 0/34 (0%)
+
+Query  53  EDCYDVVKVETVDTNIDYYTKAYKISSFNHTAYQ  86
+           ++ YD+VKVETVDTNI YYTKAYKISSFNHT+YQ
+Sbjct  8   KEQYDIVKVETVDTNIKYYTKAYKISSFNHTSYQ  41
+
+
+> UniRef90_A0A2C2UL17 Uncharacterized protein n=2 Tax=Bacillus
+TaxID=55087 RepID=A0A2C2UL17_BACCE
+Length=82
+
+ Score = 60.8 bits (146),  Expect = 1e-10, Method: Compositional matrix adjust.
+ Identities = 28/31 (90%), Positives = 30/31 (97%), Gaps = 0/31 (0%)
+
+Query  56  YDVVKVETVDTNIDYYTKAYKISSFNHTAYQ  86
+           YD+VKVETVDTNI YYTKAYKISSFNHT+YQ
+Sbjct  11  YDIVKVETVDTNIKYYTKAYKISSFNHTSYQ  41
+
+
+> UniRef90_A0A1Q9PHM1 Uncharacterized protein n=1 Tax=Bacillus
+sp. MRMR6 TaxID=1928617 RepID=A0A1Q9PHM1_9BACI
+Length=92
+
+ Score = 38.5 bits (88),  Expect = 0.077, Method: Compositional matrix adjust.
+ Identities = 26/59 (44%), Positives = 35/59 (59%), Gaps = 3/59 (5%)
+
+Query  10  DKSKKLGDYVNALQALCEQYN--VETDKIAIVEATEEYYLFLVKQEDC-YDVVKVETVD  65
+           D S  LG+Y  AL A+   YN  V T  +A+++A+   YLFLV Q D   DV+KV+  D
+Sbjct  17  DDSNFLGEYAGALIAVQNYYNNYVTTGSVALIQASVFEYLFLVDQHDGKSDVLKVKISD  75
+
+
+> UniRef90_A0A0N1CKS1 Bleomycin resistance protein n=3 Tax=Mycobacteroides
+TaxID=670516 RepID=A0A0N1CKS1_9MYCO
+Length=132
+
+ Score = 38.1 bits (87),  Expect = 0.23, Method: Compositional matrix adjust.
+ Identities = 20/79 (25%), Positives = 42/79 (53%), Gaps = 5/79 (6%)
+
+Query  6   IFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVD  65
+           +FG+  +++ G ++N +  L    N++   IA  + T ++Y FLV ++D +D +    VD
+Sbjct  25  VFGLSAAQEFGHFLNVV--LEHGGNLDFATIAAADITPQHYAFLVDEDD-FDAIYGRIVD  81
+
+Query  66  TNIDYY--TKAYKISSFNH  82
+             ++++   +A      NH
+Sbjct  82  RGLEHWADPRAQHPGEINH  100
+
+
+> UniRef90_K6X0R6 Exodeoxyribonuclease I n=3 Tax=Alteromonadaceae
+TaxID=72275 RepID=K6X0R6_9ALTE
+Length=476
+
+ Score = 37.4 bits (85),  Expect = 0.88, Method: Composition-based stats.
+ Identities = 16/34 (47%), Positives = 23/34 (68%), Gaps = 0/34 (0%)
+
+Query  12   SKKLGDYVNALQALCEQYNVETDKIAIVEATEEY  45
+            S  + DYV  L+ LCEQY+  +DK+AI++A   Y
+Sbjct  439  SITMSDYVQTLELLCEQYHSNSDKLAILKALYTY  472
+
+
+> UniRef90_UPI000C04492A transcription factor bHLH154-like isoform
+X6 n=1 Tax=Durio zibethinus TaxID=66656 RepID=UPI000C04492A
+Length=113
+
+ Score = 35.4 bits (80),  Expect = 2.0, Method: Compositional matrix adjust.
+ Identities = 20/59 (34%), Positives = 32/59 (54%), Gaps = 1/59 (2%)
+
+Query  9   MDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTN  67
+           +D+ +KLG++V ALQ L   Y  +TD  +++    EY  FL +Q        ++T  TN
+Sbjct  3   LDRKEKLGEHVVALQQLVSPYG-KTDTASVLLEAMEYIRFLHEQVKVLSAPYLQTTPTN  60
+
+
+> UniRef90_A0A1U8B202 RNA-binding protein NOB1-like n=2 Tax=Nelumbo
+nucifera TaxID=4432 RepID=A0A1U8B202_NELNU
+Length=624
+
+ Score = 35.8 bits (81),  Expect = 2.5, Method: Composition-based stats.
+ Identities = 18/50 (36%), Positives = 29/50 (58%), Gaps = 1/50 (2%)
+
+Query  20   NALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNID  69
+            N L ++ +Q  +E D + I++  EE+ LF V+Q  C D V VE +  N +
+Sbjct  348  NDLSSILKQMRLEADPLEILQEDEEHSLFSVEQGTC-DPVAVEAISNNTN  396
+
+
+> UniRef90_A0A170YGB2 MG2 domain-containing protein n=1 Tax=Paludibacter
+jiangxiensis TaxID=681398 RepID=A0A170YGB2_9BACT
+Length=1975
+
+ Score = 35.0 bits (79),  Expect = 5.6, Method: Compositional matrix adjust.
+ Identities = 20/62 (32%), Positives = 33/62 (53%), Gaps = 4/62 (6%)
+
+Query  18   YVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNIDYYTKAYKI  77
+            Y+NALQ L ++Y+     + ++ A   +YL    Q D YD  +V      +DY  +A+ I
+Sbjct  287  YLNALQQLRQEYSTSESVVEVMAAIANHYL----QHDEYDKERVNETARFLDYKKRAFDI  342
+
+Query  78   SS  79
+            S+
+Sbjct  343  SA  344
+
+
+> UniRef90_UPI000C03E376 transcription factor bHLH153-like isoform
+X1 n=3 Tax=Durio zibethinus TaxID=66656 RepID=UPI000C03E376
+Length=158
+
+ Score = 34.7 bits (78),  Expect = 5.9, Method: Compositional matrix adjust.
+ Identities = 21/63 (33%), Positives = 33/63 (52%), Gaps = 1/63 (2%)
+
+Query  5    TIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETV  64
+            +I   D+ +KLG++V ALQ L   Y  +TD  +++    EY  FL +Q        ++T
+Sbjct  44   SISAKDRKEKLGEHVVALQQLVSPYG-KTDTASVLLEAMEYIRFLHEQVKVLSAPYLQTT  102
+
+Query  65   DTN  67
+             TN
+Sbjct  103  PTN  105
+
+
+> UniRef90_UPI000525CF1D DegT/DnrJ/EryC1/StrS family aminotransferase
+n=1 Tax=Saccharothrix sp. NRRL B-16314 TaxID=1463825
+RepID=UPI000525CF1D
+Length=369
+
+ Score = 34.3 bits (77),  Expect = 8.0, Method: Composition-based stats.
+ Identities = 26/87 (30%), Positives = 43/87 (49%), Gaps = 11/87 (13%)
+
+Query  11   KSKKLGDYVNALQALCEQYNVE----TDKIAIVEA---TEEYYLFLVK---QEDCYDVVK  60
+            K  +L  YV   QA+  +Y VE    TD +  V A   T  YY+++V+   ++D  + +K
+Sbjct  243  KLGRLDQYVAGRQAVAARY-VEGLGDTDLVLPVTAPGNTHVYYVYVVRHPRRDDILEALK  301
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQK  87
+               +  NI Y    + ++ F H  Y+K
+Sbjct  302  AYDIQLNISYPWPVHTMTGFAHLGYEK  328
+
+
+
+Lambda      K        H        a         alpha
+   0.317    0.132    0.370    0.792     4.96
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0410    0.140     1.90     42.6     43.6
+
+Effective search space used: 713396785380
+Results from round 3
+
+
+Query= trQ6HLB4
+
+Length=87
+                                                                      Score     E
+Sequences producing significant alignments:                          (Bits)  Value
+Sequences used in model and found again:
+
+  UniRef90_Q73B56 Uncharacterized protein n=223 Tax=Bacteria TaxI...  142     3e-42
+  UniRef90_A0A2B5LEL4 Uncharacterized protein n=24 Tax=Bacillus T...  135     6e-40
+  UniRef90_J9CBP8 Uncharacterized protein n=82 Tax=Bacillaceae Ta...  135     7e-40
+  UniRef90_A0A2A8J2G4 Uncharacterized protein n=7 Tax=Bacillus Ta...  135     1e-39
+  UniRef90_A0A2C4Q8I8 Uncharacterized protein n=1 Tax=Bacillus to...  135     1e-39
+  UniRef90_K0FKM6 Group-specific protein n=28 Tax=Bacilli TaxID=9...  133     5e-39
+  UniRef90_A0A2A8LRG0 Uncharacterized protein n=2 Tax=Bacillus ce...  132     1e-38
+  UniRef90_F0PUM9 Uncharacterized protein n=54 Tax=Bacillus TaxID...  131     2e-38
+  UniRef90_A0A2A8PP44 DUF3992 domain-containing protein n=6 Tax=B...  130     3e-38
+  UniRef90_A0A160HBC0 Uncharacterized protein n=6 Tax=Bacillus ce...  130     5e-38
+  UniRef90_A0A2B3TZC1 Uncharacterized protein n=3 Tax=Bacillus Ta...  130     6e-38
+  UniRef90_A0A2A8RRP3 Uncharacterized protein n=1 Tax=Bacillus ce...  127     8e-37
+  UniRef90_A0A090YKK4 Uncharacterized protein n=2 Tax=Bacillus Ta...  123     3e-35
+  UniRef90_A0A1S8G999 Uncharacterized protein n=12 Tax=Bacillus c...  123     3e-35
+  UniRef90_A0A073KAY6 Uncharacterized protein n=1 Tax=Bacillus ga...  121     2e-34
+  UniRef90_UPI0002DA5B5C DUF3992 domain-containing protein n=1 Ta...  119     7e-34
+  UniRef90_A0A2B0MQL3 Uncharacterized protein n=1 Tax=Bacillus ce...  118     3e-33
+  UniRef90_C2W5V9 Uncharacterized protein n=1 Tax=Bacillus cereus...  107     8e-29
+  UniRef90_UPI000A37330D DUF3992 domain-containing protein n=1 Ta...  99.7    5e-26
+  UniRef90_A0A2C2UL17 Uncharacterized protein n=2 Tax=Bacillus Ta...  56.5    7e-09
+  UniRef90_A0A1H3PP02 Uncharacterized protein n=1 Tax=Bacillus sp...  55.0    2e-08
+
+Sequences not found previously or not previously below threshold:
+
+  UniRef90_A0A1Q9PHM1 Uncharacterized protein n=1 Tax=Bacillus sp...  35.4    1.4
+  UniRef90_A0A0G1TEI4 Vitamin B12-dependent ribonucleotide reduct...  35.7    2.6
+  UniRef90_A0A170YGB2 MG2 domain-containing protein n=1 Tax=Palud...  35.7    3.4
+  UniRef90_A0A0N1CKS1 Bleomycin resistance protein n=3 Tax=Mycoba...  34.2    7.2
+  UniRef90_UPI000525CF1D DegT/DnrJ/EryC1/StrS family aminotransfe...  34.2    8.5
+
+
+> UniRef90_Q73B56 Uncharacterized protein n=223 Tax=Bacteria TaxID=2
+RepID=Q73B56_BACC1
+Length=124
+
+ Score = 142 bits (357),  Expect = 3e-42, Method: Composition-based stats.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFL+KQE+CYDVVK
+Sbjct  38   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLIKQEECYDVVK  97
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNIDYYTKAYKISSFNHTAYQ
+Sbjct  98   VETVDTNIDYYTKAYKISSFNHTAYQ  123
+
+
+> UniRef90_A0A2B5LEL4 Uncharacterized protein n=24 Tax=Bacillus
+TaxID=55087 RepID=A0A2B5LEL4_9BACI
+Length=109
+
+ Score = 135 bits (341),  Expect = 6e-40, Method: Composition-based stats.
+ Identities = 85/87 (98%), Positives = 86/87 (99%), Gaps = 0/87 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQK  87
+            VETVDTNI+YYTKAYKISSFNHT YQK
+Sbjct  83   VETVDTNIEYYTKAYKISSFNHTVYQK  109
+
+
+> UniRef90_J9CBP8 Uncharacterized protein n=82 Tax=Bacillaceae
+TaxID=186817 RepID=J9CBP8_BACCE
+Length=118
+
+ Score = 135 bits (341),  Expect = 7e-40, Method: Composition-based stats.
+ Identities = 76/86 (88%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMD++KKLG+YVNALQALCEQY++ETD+IAI+EATEEYYLFL+KQEDCYDVVK
+Sbjct  32   MLVQTIFGMDETKKLGNYVNALQALCEQYDIETDRIAIIEATEEYYLFLMKQEDCYDVVK  91
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNIDYYTKAYK+SSFNHT+YQ
+Sbjct  92   VETVDTNIDYYTKAYKVSSFNHTSYQ  117
+
+
+> UniRef90_A0A2A8J2G4 Uncharacterized protein n=7 Tax=Bacillus
+TaxID=55087 RepID=A0A2A8J2G4_BACCE
+Length=109
+
+ Score = 135 bits (339),  Expect = 1e-39, Method: Composition-based stats.
+ Identities = 81/86 (94%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMD+SKKLGDYVNALQALCEQYNVETD+IAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDQSKKLGDYVNALQALCEQYNVETDRIAIIEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNID+YTKAYKISSFNH+AYQ
+Sbjct  83   VETVDTNIDFYTKAYKISSFNHSAYQ  108
+
+
+> UniRef90_A0A2C4Q8I8 Uncharacterized protein n=1 Tax=Bacillus
+toyonensis TaxID=155322 RepID=A0A2C4Q8I8_9BACI
+Length=109
+
+ Score = 135 bits (339),  Expect = 1e-39, Method: Composition-based stats.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEDCYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDTNI+YYTKAYKISSFNHTAYQ
+Sbjct  83   VETVDTNIEYYTKAYKISSFNHTAYQ  108
+
+
+> UniRef90_K0FKM6 Group-specific protein n=28 Tax=Bacilli TaxID=91061
+RepID=K0FKM6_BACTU
+Length=98
+
+ Score = 133 bits (334),  Expect = 5e-39, Method: Composition-based stats.
+ Identities = 84/86 (98%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  12  MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEDCYDVVK  71
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNI+YYTKAYKISSFNHTAYQ
+Sbjct  72  VETVDTNIEYYTKAYKISSFNHTAYQ  97
+
+
+> UniRef90_A0A2A8LRG0 Uncharacterized protein n=2 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2A8LRG0_BACCE
+Length=109
+
+ Score = 132 bits (333),  Expect = 1e-38, Method: Composition-based stats.
+ Identities = 80/86 (93%), Positives = 84/86 (98%), Gaps = 0/86 (0%)
+
+Query  1    MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+            MLVQTIFGMDKSKKLGDYVNALQALC QYNVETD+I IVEATEEYYLFLVKQE+CYDVVK
+Sbjct  23   MLVQTIFGMDKSKKLGDYVNALQALCGQYNVETDRITIVEATEEYYLFLVKQEECYDVVK  82
+
+Query  61   VETVDTNIDYYTKAYKISSFNHTAYQ  86
+            VETVDT+IDYYTKAYKISSFNH+AYQ
+Sbjct  83   VETVDTDIDYYTKAYKISSFNHSAYQ  108
+
+
+> UniRef90_F0PUM9 Uncharacterized protein n=54 Tax=Bacillus TaxID=55087
+RepID=F0PUM9_BACT0
+Length=87
+
+ Score = 131 bits (329),  Expect = 2e-38, Method: Composition-based stats.
+ Identities = 83/87 (95%), Positives = 86/87 (99%), Gaps = 0/87 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGM KSKKLGDYVNALQALCE+YNVETDKIAIVEATEEYYLFLVKQE+CYDVVK
+Sbjct  1   MLVQTIFGMGKSKKLGDYVNALQALCEEYNVETDKIAIVEATEEYYLFLVKQEECYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQK  87
+           VETVDTNIDYYTKAYKISSFNH+AYQK
+Sbjct  61  VETVDTNIDYYTKAYKISSFNHSAYQK  87
+
+
+> UniRef90_A0A2A8PP44 DUF3992 domain-containing protein n=6 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A2A8PP44_BACCE
+Length=87
+
+ Score = 130 bits (328),  Expect = 3e-38, Method: Composition-based stats.
+ Identities = 79/86 (92%), Positives = 86/86 (100%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYV+ALQALCEQYNVET++IAI+EATEEYYLFLVKQEDCYDV+K
+Sbjct  1   MLVQTIFGMDKSKKLGDYVSALQALCEQYNVETERIAIIEATEEYYLFLVKQEDCYDVIK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYTKA+KISSFNH+AYQ
+Sbjct  61  VETVDTNIDYYTKAHKISSFNHSAYQ  86
+
+
+> UniRef90_A0A160HBC0 Uncharacterized protein n=6 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A160HBC0_BACCE
+Length=87
+
+ Score = 130 bits (327),  Expect = 5e-38, Method: Composition-based stats.
+ Identities = 81/86 (94%), Positives = 85/86 (99%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMDKSKKLGDYVN LQALCEQYNVETDKIAI+EATEEYYLFL+KQ+DCYDVVK
+Sbjct  1   MLVQTIFGMDKSKKLGDYVNVLQALCEQYNVETDKIAIIEATEEYYLFLIKQDDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYT+AYKISSFNHTAYQ
+Sbjct  61  VETVDTNIDYYTRAYKISSFNHTAYQ  86
+
+
+> UniRef90_A0A2B3TZC1 Uncharacterized protein n=3 Tax=Bacillus
+TaxID=55087 RepID=A0A2B3TZC1_BACCE
+Length=87
+
+ Score = 130 bits (326),  Expect = 6e-38, Method: Composition-based stats.
+ Identities = 77/86 (90%), Positives = 85/86 (99%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGMD++KKLG+YVNALQALCEQY++ETD+IAI+EATEEYYLFLVKQEDCYDVVK
+Sbjct  1   MLVQTIFGMDETKKLGNYVNALQALCEQYDIETDRIAIIEATEEYYLFLVKQEDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTNIDYYTKAYK+SSFNHT YQ
+Sbjct  61  VETVDTNIDYYTKAYKVSSFNHTFYQ  86
+
+
+> UniRef90_A0A2A8RRP3 Uncharacterized protein n=1 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2A8RRP3_BACCE
+Length=87
+
+ Score = 127 bits (319),  Expect = 8e-37, Method: Composition-based stats.
+ Identities = 69/86 (80%), Positives = 81/86 (94%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M K +KLG+YVNALQAL EQY++ETD IAI+EATEEYYLFL+KQ++CYDVVK
+Sbjct  1   MLVQTVFEMGKKEKLGNYVNALQALREQYDIETDCIAIIEATEEYYLFLIKQKECYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYKISSFNHT+YQ
+Sbjct  61  VETVDTNLEYYTKAYKISSFNHTSYQ  86
+
+
+> UniRef90_A0A090YKK4 Uncharacterized protein n=2 Tax=Bacillus
+TaxID=55087 RepID=A0A090YKK4_BACMY
+Length=83
+
+ Score = 123 bits (308),  Expect = 3e-35, Method: Composition-based stats.
+ Identities = 63/85 (74%), Positives = 77/85 (91%), Gaps = 2/85 (2%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIFGM K+KKLG++VNALQALCE+Y++ETD++AI+EATEEY LFL KQED YDVVK
+Sbjct  1   MLVQTIFGMGKTKKLGNHVNALQALCEKYDIETDRVAIIEATEEYDLFLAKQEDGYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAY  85
+           VETVDTNI+YYT   K+S+F+HT +
+Sbjct  61  VETVDTNIEYYTN--KVSNFSHTPH  83
+
+
+> UniRef90_A0A1S8G999 Uncharacterized protein n=12 Tax=Bacillus
+cereus group TaxID=86661 RepID=A0A1S8G999_BACMY
+Length=87
+
+ Score = 123 bits (308),  Expect = 3e-35, Method: Composition-based stats.
+ Identities = 69/86 (80%), Positives = 80/86 (93%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M K+KKL +YVNALQAL EQY++ETD IAI+EATEEYYLFLVKQ DCYDVVK
+Sbjct  1   MLVQTVFEMGKNKKLENYVNALQALKEQYDIETDCIAIIEATEEYYLFLVKQTDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYKISSF+HT+Y+
+Sbjct  61  VETVDTNLEYYTKAYKISSFSHTSYR  86
+
+
+> UniRef90_A0A073KAY6 Uncharacterized protein n=1 Tax=Bacillus
+gaemokensis TaxID=574375 RepID=A0A073KAY6_9BACI
+Length=87
+
+ Score = 121 bits (303),  Expect = 2e-34, Method: Composition-based stats.
+ Identities = 64/86 (74%), Positives = 77/86 (90%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIF   K +KLG++VNALQAL EQY+V+TD IAI+E+ E+YYLFLVKQ+D YDVVK
+Sbjct  1   MLVQTIFETGKKEKLGNFVNALQALQEQYDVDTDCIAIIESKEDYYLFLVKQKDGYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YY KAYK+SSFNHT+YQ
+Sbjct  61  VETVDTNLEYYMKAYKVSSFNHTSYQ  86
+
+
+> UniRef90_UPI0002DA5B5C DUF3992 domain-containing protein n=1
+Tax=Bacillus bingmayongensis TaxID=1150157 RepID=UPI0002DA5B5C
+Length=87
+
+ Score = 119 bits (299),  Expect = 7e-34, Method: Composition-based stats.
+ Identities = 67/86 (78%), Positives = 80/86 (93%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQT+F M KSK LG YVNALQ+L EQY++ET++IAI+EATEEYYLFL+KQ+D YDVVK
+Sbjct  1   MLVQTVFEMGKSKNLGSYVNALQSLKEQYDIETERIAIIEATEEYYLFLIKQKDSYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN++YYTKAYK+SSFNHT+YQ
+Sbjct  61  VETVDTNLEYYTKAYKVSSFNHTSYQ  86
+
+
+> UniRef90_A0A2B0MQL3 Uncharacterized protein n=1 Tax=Bacillus
+cereus TaxID=1396 RepID=A0A2B0MQL3_BACCE
+Length=87
+
+ Score = 118 bits (296),  Expect = 3e-33, Method: Composition-based stats.
+ Identities = 67/86 (78%), Positives = 75/86 (87%), Gaps = 0/86 (0%)
+
+Query  1   MLVQTIFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVK  60
+           MLVQTIF M K +KL  YVNALQAL EQY ++TD IAI+EATEEYYLFLVK+EDCYDVVK
+Sbjct  1   MLVQTIFEMGKKEKLEKYVNALQALREQYEIDTDCIAIIEATEEYYLFLVKKEDCYDVVK  60
+
+Query  61  VETVDTNIDYYTKAYKISSFNHTAYQ  86
+           VETVDTN +YYTK YK+SSF+HT YQ
+Sbjct  61  VETVDTNFEYYTKVYKVSSFSHTTYQ  86
+
+
+> UniRef90_C2W5V9 Uncharacterized protein n=1 Tax=Bacillus cereus
+Rock3-44 TaxID=526986 RepID=C2W5V9_BACCE
+Length=81
+
+ Score = 107 bits (266),  Expect = 8e-29, Method: Composition-based stats.
+ Identities = 60/77 (78%), Positives = 68/77 (88%), Gaps = 0/77 (0%)
+
+Query  10  DKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNID  69
+            K+KKL  YVN LQAL EQY V+TD IAI+EATEEYYLFLVK+EDCYDVVKVETVDTN++
+Sbjct  4   GKTKKLEKYVNMLQALREQYEVDTDCIAIIEATEEYYLFLVKKEDCYDVVKVETVDTNLE  63
+
+Query  70  YYTKAYKISSFNHTAYQ  86
+           YYTK YK+SSF+HT YQ
+Sbjct  64  YYTKVYKVSSFSHTTYQ  80
+
+
+> UniRef90_UPI000A37330D DUF3992 domain-containing protein n=1
+Tax=Bacillus thuringiensis TaxID=1428 RepID=UPI000A37330D
+Length=69
+
+ Score = 99.7 bits (247),  Expect = 5e-26, Method: Composition-based stats.
+ Identities = 64/68 (94%), Positives = 68/68 (100%), Gaps = 0/68 (0%)
+
+Query  19  VNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNIDYYTKAYKIS  78
+           +NALQALCEQYNVETDKIAI+EATEEYYLFLVKQE+CYDVVKVETVDTNI+YYTKAYKIS
+Sbjct  1   MNALQALCEQYNVETDKIAIIEATEEYYLFLVKQEECYDVVKVETVDTNIEYYTKAYKIS  60
+
+Query  79  SFNHTAYQ  86
+           SFNHTAYQ
+Sbjct  61  SFNHTAYQ  68
+
+
+> UniRef90_A0A2C2UL17 Uncharacterized protein n=2 Tax=Bacillus
+TaxID=55087 RepID=A0A2C2UL17_BACCE
+Length=82
+
+ Score = 56.5 bits (135),  Expect = 7e-09, Method: Composition-based stats.
+ Identities = 28/34 (82%), Positives = 32/34 (94%), Gaps = 0/34 (0%)
+
+Query  53  EDCYDVVKVETVDTNIDYYTKAYKISSFNHTAYQ  86
+           ++ YD+VKVETVDTNI YYTKAYKISSFNHT+YQ
+Sbjct  8   KEQYDIVKVETVDTNIKYYTKAYKISSFNHTSYQ  41
+
+
+> UniRef90_A0A1H3PP02 Uncharacterized protein n=1 Tax=Bacillus
+sp. 166amftsu TaxID=1761753 RepID=A0A1H3PP02_9BACI
+Length=63
+
+ Score = 55.0 bits (131),  Expect = 2e-08, Method: Composition-based stats.
+ Identities = 28/34 (82%), Positives = 32/34 (94%), Gaps = 0/34 (0%)
+
+Query  53  EDCYDVVKVETVDTNIDYYTKAYKISSFNHTAYQ  86
+           ++ YD+VKVETVDTNI YYTKAYKISSFNHT+YQ
+Sbjct  8   KEQYDIVKVETVDTNIKYYTKAYKISSFNHTSYQ  41
+
+
+> UniRef90_A0A1Q9PHM1 Uncharacterized protein n=1 Tax=Bacillus
+sp. MRMR6 TaxID=1928617 RepID=A0A1Q9PHM1_9BACI
+Length=92
+
+ Score = 35.4 bits (80),  Expect = 1.4, Method: Composition-based stats.
+ Identities = 27/71 (38%), Positives = 41/71 (58%), Gaps = 3/71 (4%)
+
+Query  10  DKSKKLGDYVNALQALCEQYN--VETDKIAIVEATEEYYLFLVKQEDC-YDVVKVETVDT  66
+           D S  LG+Y  AL A+   YN  V T  +A+++A+   YLFLV Q D   DV+KV+  D
+Sbjct  17  DDSNFLGEYAGALIAVQNYYNNYVTTGSVALIQASVFEYLFLVDQHDGKSDVLKVKISDG  76
+
+Query  67  NIDYYTKAYKI  77
+            ++  ++  K+
+Sbjct  77  VVELVSQFDKL  87
+
+
+> UniRef90_A0A0G1TEI4 Vitamin B12-dependent ribonucleotide reductase
+(Fragment) n=1 Tax=Candidatus Peregrinibacteria bacterium
+GW2011_GWA2_47_7 TaxID=1619058 RepID=A0A0G1TEI4_9BACT
+Length=724
+
+ Score = 35.7 bits (81),  Expect = 2.6, Method: Composition-based stats.
+ Identities = 24/79 (30%), Positives = 35/79 (44%), Gaps = 7/79 (9%)
+
+Query  10   DKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQ----EDCYDVVKVETVD  65
+             K+ KL   +NAL+ L  +Y    D+  I+E  EE Y  + K     E  Y    +E
+Sbjct  70   GKTTKLPLSINALRVLAGRYLTRDDEGEIIENPEEMYERVAKALAEVEKQYGASDLEVAK  129
+
+Query  66   TNIDYYTKAYKISSFNHTA  84
+             N  +YT    +S+F  T
+Sbjct  130  YNEQFYT---ALSNFEFTP  145
+
+
+> UniRef90_A0A170YGB2 MG2 domain-containing protein n=1 Tax=Paludibacter
+jiangxiensis TaxID=681398 RepID=A0A170YGB2_9BACT
+Length=1975
+
+ Score = 35.7 bits (81),  Expect = 3.4, Method: Composition-based stats.
+ Identities = 20/62 (32%), Positives = 33/62 (53%), Gaps = 4/62 (6%)
+
+Query  18   YVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVDTNIDYYTKAYKI  77
+            Y+NALQ L ++Y+     + ++ A   +YL    Q D YD  +V      +DY  +A+ I
+Sbjct  287  YLNALQQLRQEYSTSESVVEVMAAIANHYL----QHDEYDKERVNETARFLDYKKRAFDI  342
+
+Query  78   SS  79
+            S+
+Sbjct  343  SA  344
+
+
+> UniRef90_A0A0N1CKS1 Bleomycin resistance protein n=3 Tax=Mycobacteroides
+TaxID=670516 RepID=A0A0N1CKS1_9MYCO
+Length=132
+
+ Score = 34.2 bits (77),  Expect = 7.2, Method: Composition-based stats.
+ Identities = 20/79 (25%), Positives = 42/79 (53%), Gaps = 5/79 (6%)
+
+Query  6   IFGMDKSKKLGDYVNALQALCEQYNVETDKIAIVEATEEYYLFLVKQEDCYDVVKVETVD  65
+           +FG+  +++ G ++N +  L    N++   IA  + T ++Y FLV ++D +D +    VD
+Sbjct  25  VFGLSAAQEFGHFLNVV--LEHGGNLDFATIAAADITPQHYAFLVDEDD-FDAIYGRIVD  81
+
+Query  66  TNIDYYT--KAYKISSFNH  82
+             ++++   +A      NH
+Sbjct  82  RGLEHWADPRAQHPGEINH  100
+
+
+> UniRef90_UPI000525CF1D DegT/DnrJ/EryC1/StrS family aminotransferase
+n=1 Tax=Saccharothrix sp. NRRL B-16314 TaxID=1463825
+RepID=UPI000525CF1D
+Length=369
+
+ Score = 34.2 bits (77),  Expect = 8.5, Method: Composition-based stats.
+ Identities = 24/86 (28%), Positives = 42/86 (49%), Gaps = 9/86 (10%)
+
+Query  11   KSKKLGDYVNALQALCEQYNV---ETDKIAIVEA---TEEYYLFLVK---QEDCYDVVKV  61
+            K  +L  YV   QA+  +Y     +TD +  V A   T  YY+++V+   ++D  + +K
+Sbjct  243  KLGRLDQYVAGRQAVAARYVEGLGDTDLVLPVTAPGNTHVYYVYVVRHPRRDDILEALKA  302
+
+Query  62   ETVDTNIDYYTKAYKISSFNHTAYQK  87
+              +  NI Y    + ++ F H  Y+K
+Sbjct  303  YDIQLNISYPWPVHTMTGFAHLGYEK  328
+
+
+
+Lambda      K        H        a         alpha
+   0.318    0.140    0.380    0.792     4.96
+
+Gapped
+Lambda      K        H        a         alpha    sigma
+   0.267   0.0428    0.140     1.90     42.6     43.6
+
+Effective search space used: 713396785380
+
+Search has CONVERGED!
+
+
+  Database: uniref90.fasta
+    Posted date:  Dec 16, 2018  11:59 AM
+  Number of letters in database: 28,649,048,249
+  Number of sequences in database:  85,423,779
+
+
+
+Matrix: BLOSUM62
+Gap Penalties: Existence: 11, Extension: 1
+Neighboring words threshold: 11
+Window for multiple hits: 40
