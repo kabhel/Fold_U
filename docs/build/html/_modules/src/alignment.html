@@ -175,7 +175,7 @@
 <span class="n">logging</span><span class="o">.</span><span class="n">captureWarnings</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
 
 
-<div class="viewcode-block" id="process"><a class="viewcode-back" href="../../alignment.html#src.alignment.process">[docs]</a><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">dist_range</span><span class="p">,</span> <span class="n">dope_dict</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">dssp_bin_path</span><span class="p">,</span> <span class="n">index_list</span><span class="p">,</span> <span class="n">top_couplings_dict</span><span class="p">,</span> <span class="n">ali</span><span class="p">):</span>
+<div class="viewcode-block" id="process"><a class="viewcode-back" href="../../alignment.html#src.alignment.process">[docs]</a><span class="k">def</span> <span class="nf">process</span><span class="p">(</span><span class="n">dist_range</span><span class="p">,</span> <span class="n">dope_dict</span><span class="p">,</span> <span class="n">output_path</span><span class="p">,</span> <span class="n">index_list</span><span class="p">,</span> <span class="n">top_couplings_dict</span><span class="p">,</span> <span class="n">ali</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Generates the threading, modeller, secondary structure, solvent accessibility and</span>
 <span class="sd">        co-evolution scores for a given Alignment.</span>
@@ -186,7 +186,6 @@
 <span class="sd">            dope_dict (dict): Dictionnary structure storing the DOPE energy values according to</span>
 <span class="sd">                              residues distances.</span>
 <span class="sd">            output_path (str): The path to the results directory.</span>
-<span class="sd">            dssp_bin_path (str): Path to the dssp/mkdssp binary file.</span>
 <span class="sd">            index_list (list): A list of gapless position indexes</span>
 <span class="sd">            top_couplings_dict (dict): A dictionary with key = ranking of ccmpred top couple based</span>
 <span class="sd">                                       on ss_confidence and value = index aa1, index aa2</span>
@@ -204,7 +203,7 @@
     <span class="c1"># Calculate secondary structure score</span>
     <span class="n">ss_score</span> <span class="o">=</span> <span class="n">ali</span><span class="o">.</span><span class="n">calculate_ss_score</span><span class="p">()</span>
     <span class="c1"># Calculate solvent accessibility score</span>
-    <span class="n">solvent_access_score</span> <span class="o">=</span> <span class="n">ali</span><span class="o">.</span><span class="n">calculate_solvent_access_score</span><span class="p">(</span><span class="n">dssp_bin_path</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">)</span>
+    <span class="n">solvent_access_score</span> <span class="o">=</span> <span class="n">ali</span><span class="o">.</span><span class="n">calculate_solvent_access_score</span><span class="p">(</span><span class="mf">0.25</span><span class="p">)</span>
     <span class="c1"># Calculate co-evolution score</span>
     <span class="n">ccmpred_score</span> <span class="o">=</span> <span class="n">ali</span><span class="o">.</span><span class="n">calculate_coevolution_score</span><span class="p">(</span><span class="n">index_list</span><span class="p">,</span> <span class="n">top_couplings_dict</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ali</span><span class="o">.</span><span class="n">num</span><span class="p">,</span> <span class="n">ali</span><span class="o">.</span><span class="n">score</span><span class="p">,</span> <span class="n">threading_score</span><span class="p">,</span> <span class="n">modeller_score</span><span class="p">,</span> <span class="n">ss_score</span><span class="p">,</span> <span class="n">solvent_access_score</span><span class="p">,</span>\
@@ -226,15 +225,15 @@
 
 <div class="viewcode-block" id="keep_accessible_residues"><a class="viewcode-back" href="../../alignment.html#src.alignment.keep_accessible_residues">[docs]</a><span class="k">def</span> <span class="nf">keep_accessible_residues</span><span class="p">(</span><span class="n">dssp_rsa</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        From the output of DSSP we keep only accessible residues which have an RSA</span>
-<span class="sd">        value &gt; threshold (arbitrary threshold).</span>
+<span class="sd">     From the output of DSSP we keep only accessible residues which have an RSA</span>
+<span class="sd">     value &gt; threshold (arbitrary threshold).</span>
 
-<span class="sd">        Args:</span>
-<span class="sd">            dssp_rsa (dict): A dictionary as keys = residue index and value = RSA.</span>
-<span class="sd">            threshold (int): Relative solvant accessibility threshold.</span>
+<span class="sd">     Args:</span>
+<span class="sd">         dssp_rsa (dict): A dictionary as keys = residue index and value = RSA.</span>
+<span class="sd">         threshold (int): Relative solvant accessibility threshold.</span>
 
-<span class="sd">        Returns:</span>
-<span class="sd">            dict(dict): Keys are the residue ids and as value their solvant accessible area.</span>
+<span class="sd">     Returns:</span>
+<span class="sd">         dict(dict): Keys are the residue ids and as value their solvant accessible area.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">return</span> <span class="p">{</span><span class="n">key</span><span class="p">:</span> <span class="n">val</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">dssp_rsa</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">val</span> <span class="o">&gt;</span> <span class="n">threshold</span><span class="p">}</span></div>
 
@@ -454,48 +453,50 @@
             <span class="c1">#as matrix is triange, get matrix [i,j]</span>
             <span class="n">dist</span> <span class="o">=</span> <span class="n">distance_matrix</span><span class="p">[</span><span class="n">top_position</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">top_position</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
             <span class="n">dist_inv</span> <span class="o">=</span> <span class="n">distance_matrix</span><span class="p">[</span><span class="n">top_position</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">top_position</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>\
-            <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist_inv</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist_inv</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">):</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">)</span>\
+            <span class="ow">or</span> <span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">dist_inv</span><span class="p">,</span> <span class="nb">float</span><span class="p">)</span> <span class="ow">and</span> <span class="n">dist_inv</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">):</span>
                 <span class="n">true_pos</span> <span class="o">+=</span> <span class="mi">1</span>
+        
         <span class="c1"># Spread of the values</span>
-        <span class="n">contact_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">true_pos</span><span class="p">)</span>
+        <span class="n">contact_score</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">true_pos</span><span class="o">*</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">last</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">first</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">contact_score</span></div>
 
-<div class="viewcode-block" id="Alignment.calculate_solvent_access_score"><a class="viewcode-back" href="../../alignment.html#src.alignment.Alignment.calculate_solvent_access_score">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_solvent_access_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dssp_bin_path</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">            Calculate the accessibility score between the predicted model</span>
-<span class="sd">            and the template pdb structure.</span>
+<div class="viewcode-block" id="Alignment.calculate_solvent_access_score"><a class="viewcode-back" href="../../alignment.html#src.alignment.Alignment.calculate_solvent_access_score">[docs]</a>    <span class="k">def</span> <span class="nf">calculate_solvent_access_score</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+         <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">             Calculate the accessibility score between the predicted model</span>
+<span class="sd">             and the template pdb structure.</span>
+<span class="sd">             Args:</span>
+<span class="sd">                 dssp_bin (String): Path to the dssp binary.</span>
+<span class="sd">                 threshold cutoff (int): Cutoff for relative accessibility residue values.</span>
+<span class="sd">             Returns:</span>
+<span class="sd">                 float: The Accessibility score calculated</span>
+<span class="sd">         &#39;&#39;&#39;</span>
+         <span class="c1"># Path to the PDBs of predicted and template models</span>
+         <span class="n">pred_model_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">modeller_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
+         <span class="n">template_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">reindexed_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
+         <span class="c1"># Parse PDBs</span>
+         <span class="n">pred_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;pred_model&quot;</span><span class="p">,</span> <span class="n">pred_model_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+         <span class="n">template_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;template_model&quot;</span><span class="p">,</span> <span class="n">template_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+         <span class="c1"># Run DSSP on both PDB files of the template and the Modeller&#39;s model</span>
+         <span class="n">dssp_pred_model</span> <span class="o">=</span> <span class="n">DSSP</span><span class="p">(</span><span class="n">pred_model</span><span class="p">,</span> <span class="n">pred_model_pdb</span><span class="p">,</span> <span class="n">dssp</span><span class="o">=</span><span class="s2">&quot;bin/dssp-2.0.4-linux-amd64&quot;</span><span class="p">)</span>
+         <span class="n">dssp_template_model</span> <span class="o">=</span> <span class="n">DSSP</span><span class="p">(</span><span class="n">template_model</span><span class="p">,</span> <span class="n">template_pdb</span><span class="p">,</span> <span class="n">dssp</span><span class="o">=</span><span class="s2">&quot;bin/dssp-2.0.4-linux-amd64&quot;</span><span class="p">)</span>
+         <span class="c1"># Parse the DSSP output to retrieve the relative % of solvant accessible area for each CA.</span>
+         <span class="c1">#get alignement index</span>
+         <span class="n">query_index_ali</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">residue</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">residues</span><span class="p">)</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">residue</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">]</span>
+         <span class="n">template_index_ali</span> <span class="o">=</span> <span class="p">[</span><span class="n">index</span> <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">residue</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">residues</span><span class="p">)</span> <span class="k">if</span> <span class="nb">str</span><span class="p">(</span><span class="n">residue</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">&quot;-&quot;</span><span class="p">]</span>
+         <span class="c1">#attribuate alignemnt index</span>
+         <span class="n">rsa_pred_model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">query_index_ali</span><span class="p">,</span> <span class="p">[</span><span class="n">dssp_pred_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+             <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dssp_pred_model</span><span class="o">.</span><span class="n">keys</span><span class="p">()]))</span>
+         <span class="n">rsa_template_model</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">template_index_ali</span><span class="p">,</span> <span class="p">[</span><span class="n">dssp_template_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dssp_template_model</span><span class="o">.</span><span class="n">keys</span><span class="p">()]))</span>
+         <span class="c1"># Keep only residues under a relative accessibilities threshold: buried residues</span>
+         <span class="n">pred_access_residues</span> <span class="o">=</span> <span class="n">keep_accessible_residues</span><span class="p">(</span><span class="n">rsa_pred_model</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
+         <span class="n">template_access_residues</span> <span class="o">=</span> <span class="n">keep_accessible_residues</span><span class="p">(</span><span class="n">rsa_template_model</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
 
-<span class="sd">            Args:</span>
-<span class="sd">                naccess_bin (String): Path to the naccess binary.</span>
-<span class="sd">                threshold cutoff (int): Cutoff for relative accessibility residue values.</span>
-
-<span class="sd">            Returns:</span>
-<span class="sd">                float: The Accessibility score calculated</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="c1"># Path to the PDBs of predicted and template models</span>
-        <span class="n">pred_model_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">modeller_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
-        <span class="n">template_pdb</span> <span class="o">=</span> <span class="s2">&quot;data/pdb/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">name</span><span class="o">+</span><span class="s2">&quot;/&quot;</span><span class="o">+</span><span class="bp">self</span><span class="o">.</span><span class="n">template</span><span class="o">.</span><span class="n">reindexed_pdb</span><span class="o">+</span><span class="s2">&quot;.atm&quot;</span>
-        <span class="c1"># Parse PDBs</span>
-        <span class="n">pred_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;pred_model&quot;</span><span class="p">,</span> <span class="n">pred_model_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="n">template_model</span> <span class="o">=</span> <span class="n">PDBParser</span><span class="p">(</span><span class="n">QUIET</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">get_structure</span><span class="p">(</span><span class="s2">&quot;template_model&quot;</span><span class="p">,</span> <span class="n">template_pdb</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="c1"># Run DSSP on both PDB files of the template and the Modeller&#39;s model</span>
-        <span class="n">dssp_pred_model</span> <span class="o">=</span> <span class="n">DSSP</span><span class="p">(</span><span class="n">pred_model</span><span class="p">,</span> <span class="n">pred_model_pdb</span><span class="p">,</span> <span class="n">dssp</span><span class="o">=</span><span class="n">dssp_bin_path</span><span class="p">)</span>
-        <span class="n">dssp_template_model</span> <span class="o">=</span> <span class="n">DSSP</span><span class="p">(</span><span class="n">template_model</span><span class="p">,</span> <span class="n">template_pdb</span><span class="p">,</span> <span class="n">dssp</span><span class="o">=</span><span class="n">dssp_bin_path</span><span class="p">)</span>
-        <span class="c1"># Parse the DSSP output to retrieve the relative % of solvant accessible area for each CA.</span>
-        <span class="c1"># Stock results in: dict = {res_index: res_rsa}</span>
-        <span class="n">rsa_pred_model</span> <span class="o">=</span> <span class="p">{</span><span class="n">dssp_pred_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span> <span class="n">dssp_pred_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
-                          <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dssp_pred_model</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
-        <span class="n">rsa_template_model</span> <span class="o">=</span> <span class="p">{</span><span class="n">dssp_template_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]:</span> <span class="n">dssp_template_model</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span>
-                              <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dssp_template_model</span><span class="o">.</span><span class="n">keys</span><span class="p">()}</span>
-
-        <span class="c1"># Keep only residues under a relative accessibilities threshold: buried residues</span>
-        <span class="n">pred_access_residues</span> <span class="o">=</span> <span class="n">keep_accessible_residues</span><span class="p">(</span><span class="n">rsa_pred_model</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
-        <span class="n">template_access_residues</span> <span class="o">=</span> <span class="n">keep_accessible_residues</span><span class="p">(</span><span class="n">rsa_template_model</span><span class="p">,</span> <span class="n">threshold</span><span class="p">)</span>
-        <span class="c1"># Get the common buried residues</span>
-        <span class="n">common_residues_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pred_access_residues</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">template_access_residues</span><span class="p">))</span>
-        <span class="c1"># Normalization</span>
-        <span class="k">return</span> <span class="n">common_residues_len</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">pred_access_residues</span><span class="p">)</span></div>
+         <span class="c1"># Get the common buried residues</span>
+         <span class="n">common_residues_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">pred_access_residues</span><span class="p">)</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">template_access_residues</span><span class="p">))</span>
+         <span class="c1"># Normalization</span>
+         <span class="k">return</span> <span class="n">common_residues_len</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">query_index_ali</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="Alignment.write_alignment_for_modeller"><a class="viewcode-back" href="../../alignment.html#src.alignment.Alignment.write_alignment_for_modeller">[docs]</a>    <span class="k">def</span> <span class="nf">write_alignment_for_modeller</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ali_path</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>

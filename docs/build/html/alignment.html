@@ -285,24 +285,20 @@ i.e, more negative, DOPE scores tend to correlate with more native-like models).
 
 <dl class="method">
 <dt id="src.alignment.Alignment.calculate_solvent_access_score">
-<code class="descname">calculate_solvent_access_score</code><span class="sig-paren">(</span><em>dssp_bin_path</em>, <em>threshold</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/alignment.html#Alignment.calculate_solvent_access_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.alignment.Alignment.calculate_solvent_access_score" title="Permalink to this definition">¶</a></dt>
+<code class="descname">calculate_solvent_access_score</code><span class="sig-paren">(</span><em>threshold</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/alignment.html#Alignment.calculate_solvent_access_score"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.alignment.Alignment.calculate_solvent_access_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculate the accessibility score between the predicted model
-and the template pdb structure.</p>
+and the template pdb structure.
+:param dssp_bin: Path to the dssp binary.
+:type dssp_bin: String
+:param threshold cutoff: Cutoff for relative accessibility residue values.
+:type threshold cutoff: int</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
-<li><strong>naccess_bin</strong> (<em>String</em>) – Path to the naccess binary.</li>
-<li><strong>cutoff</strong> (<em>threshold</em>) – Cutoff for relative accessibility residue values.</li>
-</ul>
-</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The Accessibility score calculated</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The Accessibility score calculated</p>
-</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
-</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
 </tr>
 </tbody>
 </table>
@@ -451,7 +447,7 @@ value &gt; threshold (arbitrary threshold).</p>
 
 <dl class="function">
 <dt id="src.alignment.process">
-<code class="descclassname">src.alignment.</code><code class="descname">process</code><span class="sig-paren">(</span><em>dist_range</em>, <em>dope_dict</em>, <em>output_path</em>, <em>dssp_bin_path</em>, <em>index_list</em>, <em>top_couplings_dict</em>, <em>ali</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/alignment.html#process"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.alignment.process" title="Permalink to this definition">¶</a></dt>
+<code class="descclassname">src.alignment.</code><code class="descname">process</code><span class="sig-paren">(</span><em>dist_range</em>, <em>dope_dict</em>, <em>output_path</em>, <em>index_list</em>, <em>top_couplings_dict</em>, <em>ali</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/alignment.html#process"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#src.alignment.process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates the threading, modeller, secondary structure, solvent accessibility and
 co-evolution scores for a given Alignment.</p>
 <table class="docutils field-list" frame="void" rules="none">
@@ -464,7 +460,6 @@ two CA atoms to take into account for the threading algorithm.</li>
 <li><strong>dope_dict</strong> (<em>dict</em>) – Dictionnary structure storing the DOPE energy values according to
 residues distances.</li>
 <li><strong>output_path</strong> (<em>str</em>) – The path to the results directory.</li>
-<li><strong>dssp_bin_path</strong> (<em>str</em>) – Path to the dssp/mkdssp binary file.</li>
 <li><strong>index_list</strong> (<em>list</em>) – A list of gapless position indexes</li>
 <li><strong>top_couplings_dict</strong> (<em>dict</em>) – A dictionary with key = ranking of ccmpred top couple based
 on ss_confidence and value = index aa1, index aa2</li>

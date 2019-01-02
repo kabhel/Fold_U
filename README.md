@@ -1,4 +1,4 @@
-[![Fold-U release](https://img.shields.io/badge/fold--u-v2.0-blue.svg)](https://github.com/meetU-MasterStudents/Fold_U/releases/tag/v1.2)
+[![Fold-U release](https://img.shields.io/badge/fold--u-v2.1-blue.svg)](https://github.com/meetU-MasterStudents/Fold_U/releases/tag/v2.1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Python version](https://img.shields.io/badge/python-3-brightgreen.svg)
 [![Documentation Status](https://readthedocs.org/projects/fold-u/badge/?version=latest)](https://fold-u.readthedocs.io/en/latest/?badge=latest)
@@ -256,4 +256,3 @@ Thanks to team 1 and team 2 for generating to us multiple alignment files (`data
 ## License
 
 This project is licensed under the MIT License.
-

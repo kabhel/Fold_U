@@ -83,7 +83,7 @@ if __name__ == "__main__":
 
     ### Parse command line
     ######################
-    ARGUMENTS = docopt(__doc__, version='fold_u 2.0')
+    ARGUMENTS = docopt(__doc__, version='fold_u 2.1')
     # Check the types and ranges of the command line arguments parsed by docopt
     check_args()
 

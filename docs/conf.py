@@ -23,9 +23,9 @@ copyright = '2018, Gabriel Cretin, Hélène Kabbech, Tom Gutman, Flora Mikaeloff
 author = 'Gabriel Cretin, Hélène Kabbech, Tom Gutman, Flora Mikaeloff, Franz Arnold'
 
 # The short X.Y version
-version = '2.0'
+version = '2.1'
 # The full version, including alpha/beta/rc tags
-release = '2.0'
+release = '2.1'
 
 
 # -- General configuration ---------------------------------------------------
